@@ -20,9 +20,9 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/get_blogs")
-def get_blogs():
+def home():
     blogs = mongo.db.blog.find()
-    return render_template("blogs.html", blogs=blogs)
+    return render_template("home.html", blogs=blogs)
 
 
 if __name__ == "__main__":
