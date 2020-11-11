@@ -9,6 +9,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- Link for Materialize -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Link for custom css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 
 </head>
 
@@ -25,6 +27,8 @@
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<!--Script tag for Materialize-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--Script tag for custom js file-->
+	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 	
 </body>
 
