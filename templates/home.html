@@ -2,9 +2,11 @@
 {% block content %}
 
     <h1>my blog post</h1>
-      {% for blog in blogs %}
-         <h1> {{blog.blog_title}}</h1>
-         <p>{{blog.blog_content}}</p>
+      {% for post in posts %}
+         <h1> {{post.post_title}}</h1>
+         <p>{{post.post_content}}</p>
+         <p>{{post.read_time}}</p>
+         <p>Created by {{post.created_by}} </p>
       {% endfor %}
 
 {% endblock %}

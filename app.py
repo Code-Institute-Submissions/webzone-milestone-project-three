@@ -20,10 +20,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_blogs")
+@app.route("/get_posts")
 def home():
-    blogs = mongo.db.blog.find()
-    return render_template("home.html", blogs=blogs)
+    posts = list(mongo.db.post.find())
+    return render_template("home.html", posts=posts)
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
@@ -61,11 +61,11 @@ def sign_in():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                            "profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -99,9 +99,19 @@ def sign_out():
     return redirect(url_for("sign_in"))
 
 
-@app.route("/add_post")
-def add_post():
-    return render_template("add_post.html")
+@app.route("/create_post", methods=["GET", "POST"])
+def create_post():
+    if request.method == "POST":
+        post = {
+            "post_title": request.form.get("post_title"),
+            "post_content": request.form.get("post_content"),
+            "read_time": request.form.get("read_time"),
+            "created_by": session["user"]
+        }
+        mongo.db.post.insert_one(post)
+        flash("Post Successfully Created")
+        return redirect(url_for("home"))
+    return render_template("create_post.html")
 
 
 if __name__ == "__main__":
