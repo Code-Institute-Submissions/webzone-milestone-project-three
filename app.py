@@ -27,6 +27,13 @@ def home():
     return render_template("home.html", posts=posts)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    search = request.form.get("search")
+    posts = list(mongo.db.posts.find({"$text": {"$search": search}}))
+    return render_template("home.html", posts=posts)
+
+
 @app.route("/sign_up", methods=["GET", "POST"])
 # def sign_up():
 #     return render_template("sign_up.html")
