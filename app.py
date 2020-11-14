@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -22,7 +23,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_posts")
 def home():
-    posts = list(mongo.db.post.find())
+    posts = list(mongo.db.posts.find())
     return render_template("home.html", posts=posts)
 
 
@@ -106,12 +107,31 @@ def create_post():
             "post_title": request.form.get("post_title"),
             "post_content": request.form.get("post_content"),
             "read_time": request.form.get("read_time"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "created_at": datetime.now().strftime('%H:%M')
         }
-        mongo.db.post.insert_one(post)
+        mongo.db.posts.insert_one(post)
         flash("Post Successfully Created")
         return redirect(url_for("home"))
     return render_template("create_post.html")
+
+
+@app.route("/edit_post/<post_id>", methods=["GET", "POST"])
+def edit_post(post_id):
+    if request.method == "POST":
+        post = {
+            "post_title": request.form.get("post_title"),
+            "post_content": request.form.get("post_content"),
+            "read_time": request.form.get("read_time"),
+            "created_by": session["user"],
+            "created_at": datetime.now().strftime('%H:%M')
+        }
+        mongo.db.posts.update({"_id": ObjectId(post_id)}, post)
+        flash("Post Successfully Updated")
+        return redirect(url_for("home"))
+
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    return render_template("edit_post.html", post=post)
 
 
 if __name__ == "__main__":
