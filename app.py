@@ -112,6 +112,7 @@ def create_post():
     if request.method == "POST":
         post = {
             "post_title": request.form.get("post_title"),
+            "post_image": request.form.get("post_image"),
             "post_content": request.form.get("post_content"),
             "read_time": request.form.get("read_time"),
             "created_by": session["user"],
@@ -128,10 +129,11 @@ def edit_post(post_id):
     if request.method == "POST":
         post = {
             "post_title": request.form.get("post_title"),
+            "post_image": request.form.get("post_image"),
             "post_content": request.form.get("post_content"),
             "read_time": request.form.get("read_time"),
             "created_by": session["user"],
-            "created_at": datetime.now().strftime('%H:%M')
+            "created_at": datetime.utcnow().strftime('%B %d %Y')
         }
         mongo.db.posts.update({"_id": ObjectId(post_id)}, post)
         flash("Post Successfully Updated")
