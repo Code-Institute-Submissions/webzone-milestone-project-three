@@ -7,12 +7,14 @@ h1 {
     margin: 5px;
 }
 
-/* img {
-    width: 100px;
-    height: 300px;
-} */
+.post_image img{
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
-.post_image{
-    width: 500px;
-    height: 500px;
+.post_btn {
+    display: flex;
+    margin-left: 0;
 }
