@@ -34,6 +34,12 @@ def search():
     return render_template("home.html", posts=posts)
 
 
+@app.route("/view_post/<post_id>")
+def view_post(post_id):
+    the_post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    return render_template('view_post.html', post=the_post)
+
+
 @app.route("/sign_up", methods=["GET", "POST"])
 # def sign_up():
 #     return render_template("sign_up.html")

@@ -7,7 +7,12 @@ h1 {
     margin: 5px;
 }
 
-img {
+/* img {
     width: 100px;
     height: 300px;
+} */
+
+.post_image{
+    width: 500px;
+    height: 500px;
 }
