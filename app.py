@@ -1,4 +1,6 @@
 import os
+import math
+import pymongo
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -25,6 +27,15 @@ mongo = PyMongo(app)
 def home():
     posts = list(mongo.db.posts.find())
     return render_template("home.html", posts=posts)
+    # page_limit = 2
+    # current_page = int(request.args.get('current_page', 1))
+    # total = mongo.db.posts.count()
+    # pages = range(1, int(math.ceil(total / page_limit)) + 1)
+    # posts = mongo.db.posts.find().sort('_id', pymongo.DESCENDING).skip(
+    #                         (current_page - 1)*page_limit).limit(page_limit)
+
+    # return render_template("home.html", post=posts, pages=pages,
+    #                        current_page=current_page)
 
 
 @app.route("/search", methods=["GET", "POST"])

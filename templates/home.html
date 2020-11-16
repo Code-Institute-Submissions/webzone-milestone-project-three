@@ -18,34 +18,70 @@
 	</form>
 </div>
 
+
 <h1>my blog post</h1>
 {% if posts|length > 0 %}
 {% for post in posts %}
-<div class="card horizontal">
-	<div class="card-image">
-		<img src="{{post.post_image}}">
-        </div>
-		<div class="card-stacked">
-			<div class="card-content">
+<!-- Card to display blog post on Mobile -->
+ <div class="row ">
+    <div class="col s12 ">
+    <div class="hide-on-med-and-up">
 
-				<h1> {{post.post_title}}</h1>
-				<p>{{post.post_content}}</p>
-				<p>Read Time: {{post.read_time}}</p>
-				<p>Created by {{post.created_by}} </p>
-				<p>Posted On {{post.created_at}} </p>
-				<div class="col s3">
-					{% if session.user|lower == post.created_by|lower %}
+
+      <div class="card">
+        <div class="card-image"
+          <img src="{{post.post_image}}">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="card-content">
+           <h2> {{post.post_title}}</h2>
+				<p>Posted by {{post.created_by}} On {{post.created_at}}</p>
+                <p>Read Time: {{post.read_time}}</p>
+        </div>
+        <div class="card-action">
+          	{% if session.user|lower == post.created_by|lower %}
 					<button data-target="modal1" class="btn red modal-trigger">Delete</button>
 					<a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn light-blue lighten-1">Edit</a>
 					{% endif %}
 					<a href="{{ url_for('view_post', post_id=post._id) }}" class="btn light-blue lighten-1">View
 						Post</a>
-				</div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
 
-			</div>
-		</div>
-	</div>
-</div>
+  <!-- Card to display blog post on Desktop view only -->
+
+ <div class="row ">
+    <div class="col m12 l12">
+       <div class="hide-on-small-only">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="{{post.post_image}}">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+           <h2> {{post.post_title}}</h2>
+				<p>Posted by {{post.created_by}} On {{post.created_at}}</p>
+                <p>Read Time: {{post.read_time}}</p>
+        </div>
+        <div class="card-action">
+          	{% if session.user|lower == post.created_by|lower %}
+					<button data-target="modal1" class="btn red modal-trigger">Delete</button>
+					<a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn light-blue lighten-1">Edit</a>
+					{% endif %}
+					<a href="{{ url_for('view_post', post_id=post._id) }}" class="btn light-blue lighten-1">View
+						Post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+       </div>
+
+
+
 
 	<!-- Modal Structure -->
 	<div id="modal1" class="modal">
@@ -59,9 +95,11 @@
 				class="btn red modal-close waves-effect waves-green btn-flat">Delete</a>
 		</div>
 	</div>
-
+     
+     
 	{% endfor %}
 	{% else %}
 	<h3 class="red-text center-align">No Results Found</h3>
 	{% endif %}
+     
 	{% endblock %}
