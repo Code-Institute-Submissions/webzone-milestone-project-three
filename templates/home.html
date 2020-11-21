@@ -18,8 +18,6 @@
 	</form>
 </div>
 
-
-<h1>my blog post</h1>
 {% if posts|length > 0 %}
 {% for post in posts %}
 <!-- Card to display blog post on Mobile -->
@@ -31,10 +29,9 @@
       <div class="card">
         <div class="card-image"
           <img src="{{post.post_image}}">
-          <span class="card-title">Card Title</span>
         </div>
         <div class="card-content">
-           <h2> {{post.post_title}}</h2>
+           <h2 class="post-heading"> {{post.post_title}}</h2>
 				<p>Posted by {{post.created_by}} On {{post.created_at}}</p>
                 <p>Read Time: {{post.read_time}}</p>
         </div>
@@ -51,7 +48,7 @@
   </div>
  </div>
 
-  <!-- Card to display blog post on Desktop view only -->
+  <!-- Card to display blog post on Tablet and Desktop  -->
 
  <div class="row ">
     <div class="col m12 l12">
@@ -62,7 +59,7 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-           <h2> {{post.post_title}}</h2>
+           <h2 class="post-heading"> {{post.post_title}}</h2>
 				<p>Posted by {{post.created_by}} On {{post.created_at}}</p>
                 <p>Read Time: {{post.read_time}}</p>
         </div>
@@ -80,13 +77,13 @@
     </div>
        </div>
 
-
+rhdryr
 
 
 	<!-- Modal Structure -->
 	<div id="modal1" class="modal">
 		<div class="modal-content">
-			<h4>DELETE POST</h4>
+			<h4 class="modal-heading">DELETE POST</h4>
 			<p>ARE YOU SURE YOU WANT TO DELETE THIS POST?</p>
 		</div>
 		<div class="modal-footer">

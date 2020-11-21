@@ -1,6 +1,22 @@
-h1 {
-    /* font-weight: bold; */
-    /* margin-top: -10px; */
+/* General */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 2rem;
+}
+
+.post-heading,
+.modal-heading {
+    font-family: 'Robato-slab', serif;
+    
+
 }
 
 .btn {
