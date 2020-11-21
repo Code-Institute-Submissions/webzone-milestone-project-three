@@ -9,16 +9,17 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- Link for Materialize -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!-- Link for Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <!-- Link for custom css -->
+	<!-- Link for Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@300&display=swap"
+		rel="stylesheet">
+	<!-- Link for custom css -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 
 </head>
 
 <body>
-<!-- Header -->
+	<!-- Header -->
 	<header>
 		<nav>
 			<div class="nav-wrapper">
@@ -29,51 +30,82 @@
 					<li><a href="{{ url_for('home') }}">Home</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">FAQ</a></li>
-                    {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('create_post') }}">Create Post</a></li>
-                    <li><a href="{{ url_for('sign_out') }}">Sign Out</a></li>
-                    {% else %}
+					{% if session.user %}
+					<li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+					<li><a href="{{ url_for('create_post') }}">Create Post</a></li>
+					<li><a href="{{ url_for('sign_out') }}">Sign Out</a></li>
+					{% else %}
 					<li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
 					<li><a href="{{ url_for('sign_in') }}">Sign in</a></li>
-                    {% endif %}
+					{% endif %}
 				</ul>
 				<ul class="side-nav" id="mobile-demo">
 					<li><a href="{{ url_for('home') }}">Home</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">FAQ</a></li>
-                    {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('create_post') }}">Create Post</a></li>
-                    <li><a href="{{ url_for('sign_out') }}">Sign Out</a></li>
-                    {% else %}
+					{% if session.user %}
+					<li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+					<li><a href="{{ url_for('create_post') }}">Create Post</a></li>
+					<li><a href="{{ url_for('sign_out') }}">Sign Out</a></li>
+					{% else %}
 					<li><a href="{{ url_for('sign_up') }}">Sign Up</a></li>
 					<li><a href="{{ url_for('sign_in') }}">Sign in</a></li>
-                    {% endif %}
+					{% endif %}
 				</ul>
 			</div>
 		</nav>
 	</header>
 	<!-- End Header -->
 
-     <section class="container">
-        <!-- flash messages -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
+	<section class="container">
+		<!-- flash messages -->
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		{% for message in messages %}
+		<div class="row flashes">
+			<h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+		</div>
+		{% endfor %}
+		{% endif %}
+		{% endwith %}
+	</section>
+
 	<main class="container">
-	{% block content %}
+		{% block content %}
 
 
-	{% endblock %}
-    </main>
+		{% endblock %}
+	</main>
+
+    <!-- Footer section -->
+	<footer>
+    <div class="container">
+		<div class="row">
+			<div class="col s12 m6 l6">
+            <h4>Contact Us</h4>
+					<p class="contact-info">+4531884865</p>
+					<p class="contact-info">info.webzone@contact.com</p>
+					<p class="contact-info">Nygardterraserne 253E 3520 Copenhagen</p>
+			</div>
+			<div class="col s12 m6 l6">
+            <h4>Connect With Us</h4>
+            <ul >
+						<li ><a href="https://www.facebook.com/cypriot.man"
+								target="_blank">Facebook</a></li>
+						<li><a
+								href="https://www.linkedin.com/in/takafor-anutatu-7783b819b/"
+								target="_blank">Linkedin</a></li>
+						<li ><a href="https://github.com/Takaforyannick30"
+								target="_blank">Github</a></li>
+						<li><a
+								href="https://www.instagram.com/yannickvasilia/"
+								target="_blank">Instagram</a></li>
+					</ul>
+			</div>
+		</div>
+        <p class="copyright">TAKAFORYANNICK&copy;2020</p>
+    </div>
+	</footer>
 
 
 	<!--Script tag for jQuery-->
@@ -81,9 +113,9 @@
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<!--Script tag for Materialize-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <!--Script tag for custom js file-->
+	<!--Script tag for custom js file-->
 	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-	
+
 </body>
 
 </html>

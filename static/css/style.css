@@ -10,6 +10,15 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     line-height: 2rem;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+
+main {
+    flex: 1 0 auto;
 }
 
 .post-heading,
@@ -42,4 +51,19 @@ img{
 
 .border {
     border: 1px solid black;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #163172;
+    color: white;
+    border-top: 2px solid #1e56a0;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+footer a {
+    color: white;
 }
