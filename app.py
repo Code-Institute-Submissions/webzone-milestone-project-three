@@ -133,7 +133,7 @@ def create_post():
             "post_content": request.form.get("post_content"),
             "read_time": request.form.get("read_time"),
             "created_by": session["user"],
-            "created_at": datetime.now().strftime('%H:%M')
+            "created_at": datetime.now().strftime('%B %d %Y')
         }
         mongo.db.posts.insert_one(post)
         flash("Post Successfully Created")
