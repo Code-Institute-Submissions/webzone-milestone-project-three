@@ -1,46 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Edit Post</h3>
-    
-    <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="post_title" name="post_title" minlength="5" maxlength="50" value="{{ post.post_title }}"
+<h3 class="center-align">Edit Post</h3>
+
+<!-- Edit post form -->
+<div class="row">
+	<form class="col s12" method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
+		<!-- Post title -->
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="post_title" name="post_title" minlength="5" maxlength="50" value="{{ post.post_title }}"
                         type="text" class="validate" required>
-                    <label for="post_title">Post Title</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="post_image" name="post_image" value="{{ post.post_image }}"
+				<label for="post_title">Post Title</label>
+			</div>
+		</div>
+		<!-- Post image -->
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="post_image" name="post_image" value="{{ post.post_image }}"
                         type="text" class="validate"   required>
-                    <label for="post_image">Post Image URL</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="post_content" name="post_content" class="materialize-textarea validate" required>{{ post.post_content }}</textarea>
-                    <label for="post_content">Post Content</label>
-                </div>
-            </div>
-             <div class="row">
-                <div class="input-field col s12">
-                    <input id="read_time" name="read_time" minlength="5" maxlength="20" value="{{ post.read_time }}"
+				<label for="post_image">Post Image URL</label>
+			</div>
+		</div>
+		<!-- Post content -->
+		<div class="row">
+			<div class="input-field col s12">
+				<textarea id="post_content" name="post_content" class="materialize-textarea validate" required>{{ post.post_content }}</textarea>
+				<label for="post_content">Post Content</label>
+			</div>
+		</div>
+		<!-- Read time -->
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="read_time" name="read_time" minlength="5" maxlength="20" value="{{ post.read_time }}"
                         type="text" class="validate" required>
-                    <label for="read_time">Read Time</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-blue">
-                        Edit Post
-                    </button>
-                </div>
-            </div>
-			
-        </form>
-    </div>
+				<label for="read_time">Read Time</label>
+			</div>
+		</div>
+		<!-- Update post and cancel button -->
+		<div class="row">
+			<div class="col s12 center-align">
+				<button type="submit" class="btn light-blue">
+                        Update Post
+                </button>
+				<a href="{{ url_for('home') }}" class="red btn text-shadow">Cancel</a>
+			</div>
+		</div>
+	</form>
+</div>
 
 {% endblock %}

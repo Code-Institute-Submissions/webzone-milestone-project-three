@@ -1,43 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">SIGN UP</h3>
+<h3 class="center-align">SIGN UP</h3>
 
-    <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}">
-            <div class="card-panel">
-                <!-- username field -->
-                <div class="row">
-					<div class="input-field col s12">
-						<input id="username" name="username" type="text" minlength="5"
+<!-- Sign Up form -->
+<div class="row">
+	<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}">
+		<div class="card-panel">
+			<!-- username field -->
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-						<label for="username">Username</label>
-					</div>
-                </div>
-                <!-- password field-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" name="password" type="password" minlength="5"
+					<label for="username">Username</label>
+				</div>
+			</div>
+			<!-- password field-->
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="password" name="password" type="password" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <!-- register button -->
-                <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+					<label for="password">Password</label>
+				</div>
+			</div>
+			<!-- register button -->
+			<div class="row">
+				<button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
                         Sign Up
                     </button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                Already A Member?
-                <a href="{{ url_for('sign_in') }}" class="light-blue-text text-darken-4">Sign In</a>
-            </p>
-        </div>
-    </div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<!-- Redirect registered users to sign in page -->
+<div class="row">
+	<div class="col s12">
+		<p class="center-align">
+			Already A Member?
+			<a href="{{ url_for('sign_in') }}" class="light-blue-text text-darken-4">Sign In</a>
+		</p>
+	</div>
+</div>
 
 {% endblock %}

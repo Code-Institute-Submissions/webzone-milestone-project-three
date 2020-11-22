@@ -43,7 +43,7 @@ The use of CSS which stands for Cascading Style Sheet was also very paramount to
 
 * [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 
-Javascript, which is mostly been referred to as JS was used to create the main functional logic of this project.   
+Javascript, which is mostly been referred to as JS was used in this project mainly through Materialize
 
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
@@ -75,7 +75,7 @@ GitHub is a code hosting platform for collaboration and version control. GitHub 
 
 * [Heroku](https://heroku.com/)
 
-Heroku is a cloud platform as a service (PaaS) supporting several programming languages. One of the first cloud platforms, Heroku has been in development since June 2007, when it supported only the Ruby programming language, but now supports Java, Node.js, Scala, Clojure, Python, PHP, and Go.
+Heroku is a cloud platform as a service (PaaS) supporting several programming languages. One of the first cloud platforms, Heroku has been in development since June 2007, when it supported only the Ruby programming language, but now supports Java, Node.js, Scala, Clojure, Python, PHP, and Go. Heroku is the platform where this project has been deployed.
 
 * [Dev Tools](https://developers.google.com/web/tools/chrome-devtools)
 
