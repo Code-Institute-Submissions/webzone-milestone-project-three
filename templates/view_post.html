@@ -9,11 +9,11 @@
 			<p>Read Time: {{post.read_time}}</p>
 			<p>{{post.post_content}}</p>
            <!-- Delete and Edit post buttons only viewable to logged in users -->
-			<div class="col s3">
+			<!-- <div class="col "> -->
 				{% if session.user|lower == post.created_by|lower %}
 				<div class="post_btn">
-					<button data-target="modal1" class="btn red modal-trigger">Delete</button>
-					<a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn light-blue lighten-1">Edit</a>
+					<button data-target="modal1" class="btn red modal-trigger"><i class="fas fa-trash-alt"></i>Delete</button>
+					<a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn light-blue lighten-1"><i class="far fa-edit"></i>Edit</a>
 				</div>
 				{% endif %}
 			</div>
@@ -26,9 +26,9 @@
 				<p>Are you sure want to delete this post?</p>
 			</div>
 			<div class="modal-footer">
-				<button  class="btn modal-close">Cancel</button>
+				<button  class="btn modal-close"><i class="far fa-window-close"></i>Cancel</button>
 				<a href="{{ url_for('delete_post', post_id=post._id) }}"
-					class="btn red modal-close waves-effect waves-green btn-flat">Delete</a>
+					class="btn red modal-close waves-effect waves-green btn-flat"><i class="fas fa-trash-alt"></i>Delete</a>
 			</div>
 		</div>
 {% endblock %}
