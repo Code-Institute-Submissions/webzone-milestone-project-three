@@ -74,9 +74,34 @@ footer {
     border-top: 2px solid #1e56a0;
     text-align: center;
     padding-bottom: 1rem;
+    display: flex;
 }
 
 footer a {
-    color: white;
+  display: inline-block;
+  font-size: 2.1rem;
+  border: 1px solid #ffffff;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 5px 10px;
+}
+
+footer span {
+    border-bottom: 2px solid #ffffff;
+}
+
+footer ul{
+  justify-content:space-between; 
+  text-align:center;
+}
+
+footer ul li{
+  display:inline-block;
+ }
+
+ footer a:hover {
+  color: #ffffff;
+  background-color: #005792;
+  transition-duration: 1s;
 }
 
