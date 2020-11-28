@@ -18,6 +18,8 @@
 		rel="stylesheet">
 	<!-- Link for custom css -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <!-- Link for Favicon -->
+     <link rel="icon" href="{{ url_for('static', filename='img/webzone_favicon.ico') }}" type="image/favicon">
 
 </head>
 
@@ -26,7 +28,10 @@
 	<header>
 		<nav>
 			<div class="nav-wrapper">
-				<a href="{{ url_for('home') }}" class="brand-logo">WEBZONE</a>
+				<a href="{{ url_for('home') }}" class="brand-logo">
+                 <img class="webzone_logo" src="{{ url_for('static', filename='img/webzone_logo_icon.png') }}" alt="Webzone Logo">
+                 <span class="webzone_logo_text">WEBZONE</span>
+                </a>
 				<a href="#" data-activates="mobile-demo"
 					class="button-collapse sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
@@ -86,7 +91,7 @@
 			<div class="row">
 				<div class="col s12 m4 l4">
                    <h4><span> About Us</span></h4>
-                   <p>Webzone is a blogging app for web developers. Get inspired by reading blog post created by others or inspire someone by creating a post.</p>
+                   <p>Webzone is a blogging site for web developers. Get inspired by reading blog post created by others or inspire someone by creating a post.</p>
 				</div>
                 <div class="col s12 m4 l4">
 					<h4><span>Contact Us</span></h4>
