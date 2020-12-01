@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<div class="row">
-	<div class="col l8 offset-l2">
-		<div class="post_image"> <img class="responsive-img" src="{{post.post_image}}"> </div>
-			<h2 class="post-heading"> {{post.post_title}}</h2>
-			<p>by {{post.created_by}} - {{post.created_at}} </p>
-			<p>Read Time: {{post.read_time}}</p>
-			<p>{{post.post_content}}</p>
-           <!-- Delete and Edit post buttons only viewable to logged in users -->
-			<!-- <div class="col "> -->
+<div class="container">
+	<div class="row">
+		<div class="col l8 offset-l2">
+			<div class="post_image"> <img class="responsive-img" src="{{post.post_image}}"> </div>
+				<p class="mute_text">{{post.image_description}}</p>
+				<h2 class="post-heading"> {{post.post_title}}</h2>
+				<p class="mute_text">by {{post.created_by}} - {{post.created_at}} </p>
+				<p class="mute_text"> {{post.read_time}} min read</p>
+				<p>{{post.post_content}}</p>
+				<!-- Delete and Edit post buttons only viewable to logged in users -->
+				<!-- <div class="col "> -->
 				{% if session.user|lower == post.created_by|lower %}
 				<div class="post_btn">
 					<button data-target="modal1" class="btn red modal-trigger"><i class="fas fa-trash-alt"></i>Delete</button>
-					<a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn light-blue lighten-1"><i class="far fa-edit"></i>Edit</a>
+					<a href="{{ url_for('edit_post', post_id=post._id) }}"
+						class="btn light-blue lighten-1"><i class="far fa-edit"></i>Edit</a>
 				</div>
 				{% endif %}
 			</div>
@@ -31,4 +33,6 @@
 					class="btn red modal-close waves-effect waves-green btn-flat"><i class="fas fa-trash-alt"></i>Delete</a>
 			</div>
 		</div>
+	</div>
+</div>
 {% endblock %}

@@ -130,6 +130,7 @@ def create_post():
         post = {
             "post_title": request.form.get("post_title"),
             "post_image": request.form.get("post_image"),
+            "image_description": request.form.get("image_description"),
             "post_content": request.form.get("post_content"),
             "read_time": request.form.get("read_time"),
             "created_by": session["user"],
@@ -147,6 +148,7 @@ def edit_post(post_id):
         post = {
             "post_title": request.form.get("post_title"),
             "post_image": request.form.get("post_image"),
+            "image_description": request.form.get("image_description"),
             "post_content": request.form.get("post_content"),
             "read_time": request.form.get("read_time"),
             "created_by": session["user"],
