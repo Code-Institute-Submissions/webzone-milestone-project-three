@@ -144,6 +144,11 @@ def create_post():
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
+    # None members can't edit a post
+    if "username" not in session:
+        flash("This action is only posible for registered members")
+        return redirect(url_for("sign_up"))
+        
     if request.method == "POST":
         post = {
             "post_title": request.form.get("post_title"),
@@ -166,7 +171,7 @@ def edit_post(post_id):
 def delete_post(post_id):
     # None members can't delete a post
     if "username" not in session:
-        flash("A post can only be deleted by it's creator")
+        flash("A post can only be deleted by its creator")
         return redirect(url_for("home"))
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
     flash("Post Deleted!")
