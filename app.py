@@ -24,9 +24,9 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/get_posts")
-def home():
+def index():
     posts = list(mongo.db.posts.find())
-    return render_template("home.html", posts=posts)
+    return render_template("index.html", posts=posts)
     # page_limit = 2
     # current_page = int(request.args.get('current_page', 1))
     # total = mongo.db.posts.count()
@@ -42,7 +42,7 @@ def home():
 def search():
     search = request.form.get("search")
     posts = list(mongo.db.posts.find({"$text": {"$search": search}}))
-    return render_template("home.html", posts=posts)
+    return render_template("index.html", posts=posts)
 
 
 @app.route("/view_post/<post_id>")
@@ -138,7 +138,7 @@ def create_post():
         }
         mongo.db.posts.insert_one(post)
         flash("Post Successfully Created")
-        return redirect(url_for("home"))
+        return redirect(url_for("index"))
     return render_template("create_post.html")
 
 
@@ -161,7 +161,7 @@ def edit_post(post_id):
         }
         mongo.db.posts.update({"_id": ObjectId(post_id)}, post)
         flash("Post Successfully Updated")
-        return redirect(url_for("home"))
+        return redirect(url_for("index"))
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     return render_template("edit_post.html", post=post)
@@ -172,10 +172,10 @@ def delete_post(post_id):
     # None members can't delete a post
     if "username" not in session:
         flash("A post can only be deleted by its creator")
-        return redirect(url_for("home"))
+        return redirect(url_for("index"))
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
     flash("Post Deleted!")
-    return redirect(url_for("home"))
+    return redirect(url_for("index"))
 
 
 if __name__ == "__main__":

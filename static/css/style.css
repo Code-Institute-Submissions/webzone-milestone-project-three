@@ -1,4 +1,4 @@
-/* General */
+/*---------------------------------------------------------------- General */
 * {
     padding: 0;
     margin: 0;
@@ -20,8 +20,18 @@ body {
     flex-direction: column;
     height: 100%;
     width: 100%;
-} 
+}
 
+main {
+    flex: 1 0 auto;
+}
+
+/* For all Font Awesome Icons */
+.fas {
+    margin-right: 5px;
+}
+
+/* --------------------------------------------------------Header/Navigation section */
 nav,
 .side-nav {
     background-color: #163172;
@@ -35,10 +45,20 @@ nav,
     color: #ffffff;
 }
 
-main {
-    flex: 1 0 auto;
+.webzone_logo {
+    width: 2.5rem;
+    height: 2.5rem;  
 }
 
+nav div a img {
+    margin-bottom: -0.5rem;
+}
+
+nav div a .webzone_logo_text {
+    margin-bottom: 1rem;
+}
+
+/* -----------------------------------------------------------------Blog post components */
 .post-heading,
 .modal-heading {
     font-family: 'Robato-slab', serif;
@@ -56,16 +76,7 @@ h3 {
     margin: 5px;
 }
 
-.webzone_logo {
-    width: 2.5rem;
-    height: 2.5rem;
-    
-}
 
-nav div a .webzone_logo_text {
-    margin-bottom: 1rem;
-
-}
 
 .card {
     /* display: flex; */
@@ -143,12 +154,9 @@ nav div a .webzone_logo_text {
 }
 
 
-/* For all Font Awesome Icons */
-.fas {
-    margin-right: 5px;
-}
 
-/* Footer */
+
+/*-------------------------------------------------------------------------------- Footer */
 
 footer {
     background-color: #163172;
@@ -193,3 +201,20 @@ footer ul li{
     font-weight: normal;
 }
 
+/* ------------------------------------------------------------------------Media queries */
+@media only screen and (max-width: 767px) {
+    /* For mobile phones */
+
+    nav div .brand-logo {
+        margin-left: -10%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    
+    nav div .brand-logo {
+        margin-left: -15%;
+        font-size: 1.7rem;
+    }
+
+} */
