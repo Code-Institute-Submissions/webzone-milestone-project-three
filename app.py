@@ -7,6 +7,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from datetime import datetime
+from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
@@ -25,7 +26,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_posts")
 def index():
-    posts = list(mongo.db.posts.find().limit(3))
+    posts = list(mongo.db.posts.find().limit(10))
     return render_template("index.html", posts=posts)
     # page_limit = 2
     # current_page = int(request.args.get('current_page', 1))
@@ -104,6 +105,17 @@ def sign_in():
     return render_template("sign_in.html")
 
 
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if "logged_in" in session:
+            return f(*args, **kwargs)
+        else:
+            flash("You need to sign in first")
+            return redirect(url_for(sign_in))
+    return wrap
+    
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -168,11 +180,12 @@ def edit_post(post_id):
 
 
 @app.route("/delete_post/<post_id>")
+@login_required
 def delete_post(post_id):
     # None members can't delete a post
-    if "username" not in session:
-        flash("A post can only be deleted by its creator")
-        return redirect(url_for("index"))
+    # if "username" not in session:
+    #     flash("A post can only be deleted by its creator")
+    #     return redirect(url_for("index"))
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
     flash("Post Deleted!")
     return redirect(url_for("index"))

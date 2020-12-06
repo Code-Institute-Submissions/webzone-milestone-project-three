@@ -112,3 +112,7 @@ Chrome DevTools is a set of web developer tools built directly into the Google C
 
 Balsamiq Wireframes is a rapid low-fidelity UI wireframing tool that reproduces the experience of sketching on a notepad or whiteboard, but using a computer. Balsamiq wireframes was used in producing the wireframes for this project.
 
+## Deployment
+
+This project was developed using Gitpod. I used GitHub for my version control and Heroku to host the live version of the project. To deploy my website to Heroku, I used the following steps:
+
