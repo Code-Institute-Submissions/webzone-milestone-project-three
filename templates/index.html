@@ -29,7 +29,7 @@
 				<div class="card">
 					<!-- Post image -->
 					<div class="card-image">
-						<a href="{{ url_for('view_post', post_id=post._id) }}"><img src="{{post.post_image}}"></a>
+						<a href="{{ url_for('view_post', post_id=post._id) }}"><img src="{{post.post_image}}" alt="post image" ></a>
 					</div>
 					<!-- Post content -->
 					<div class="card-content">
@@ -83,34 +83,7 @@
 			</div>
 		</div>
 
-        <!-- Card to display blog post -->
-
-		<!-- <div class="container">
-			<div class="post_card">
-				<div class="post_img">
-		           <img src="static/img/react.png" alt="pic">
-				</div>
-				<div class="post_details">
-				</div>
-		
-				<h2>POST TITLE</h2>
-				<p>lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, harum amet? Nobis, sequi sed veritatis alias
-					fugit culpa suscipit quia nulla quaerat numquam laborum eos amet incidunt molestias laboriosam, ex debitis
-					ab ipsum praesentium impedit.</p>
-
-			  <div class="post_cta">
-              <button>view more</button>
-              <button>delete</button>
-
-			  </div>
-
-
-		
-		
-			</div>
-		
-		
-		</div> -->
+       
 
 		<!-- Modal Structure -->
 		<div id="modal1" class="modal">

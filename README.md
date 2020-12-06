@@ -28,6 +28,33 @@
 - [**Acknowledgements**](#Acknowledgements)
 - [**Disclaimer**](#Disclaimer)
 
+## About
+
+WEBZONE is a blogging application for web development. It is a place where users can read blog posts about web development. Users can also create their own free accounts and create as many posts as they wish about web development.
+
+I created this application to serve the purpose of my Data-Centric Development Milestone Project at Code Institute. The project scope was to create a web app using Python and a no-SQL database (MongoDB), which uses CRUD operations to allow users to easily create, read, update, and delete blog posts.The front-end display and functionality uses HTML, CSS, and JavaScript. The back-end functionality uses Python, Flask, and MongoDB.
+
+## UX
+
+### User Stories
+
+* As a user, I want a blogging site where I can read posts about web development.
+
+* As a user, I want to be able to create my own posts about web development so that I can inspire others. 
+
+* As a user, I want to be able to edit and update any post I create in case of any mistake or new additional information.
+
+* As a user, I want to be able to search for posts about a particular topic in web development using keywords.
+
+* As a user, I want to be able to delete any post created by me if I choose to do so.
+
+### Research
+
+To understand how to create a blogging app, I  researched tutorials with Python and MongoDB on Youtube and Udemy, and I could get a clear idea of what functionality and design I wanted my web application to have.  User Authentication is not a requirement for Code Institute's Data-Centric Mile Stone Project project but however, I implemented basic user authentication and it was copied from Code Institute's task manager mini-project.
+
+### Style Rationale
+
+I wanted to keep it simple while practicing responsive design.
 
 ## Technologies Used
 

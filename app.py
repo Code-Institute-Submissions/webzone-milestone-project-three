@@ -25,7 +25,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_posts")
 def index():
-    posts = list(mongo.db.posts.find())
+    posts = list(mongo.db.posts.find().limit(3))
     return render_template("index.html", posts=posts)
     # page_limit = 2
     # current_page = int(request.args.get('current_page', 1))
