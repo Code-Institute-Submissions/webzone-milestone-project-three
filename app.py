@@ -26,7 +26,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_posts")
 def index():
-    posts = list(mongo.db.posts.find().limit(10))
+    posts = list(mongo.db.posts.find())
     return render_template("index.html", posts=posts)
     # page_limit = 2
     # current_page = int(request.args.get('current_page', 1))
@@ -105,14 +105,23 @@ def sign_in():
     return render_template("sign_in.html")
 
 
+# def login_required(f):
+#     @wraps(f)
+#     def wrap(*args, **kwargs):
+#         if "logged_in" in session:
+#             return f(*args, **kwargs)
+#         else:
+#             flash("You need to sign in first")
+#             return redirect(url_for("sign_in"))
+#     return wrap
+# login required decorator
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
-        if "logged_in" in session:
+        if "user" in session and session["user"]:
             return f(*args, **kwargs)
-        else:
-            flash("You need to sign in first")
-            return redirect(url_for(sign_in))
+        flash("You need to sign in first")
+        return redirect(url_for("sign_in"))
     return wrap
     
 
@@ -179,15 +188,30 @@ def edit_post(post_id):
     return render_template("edit_post.html", post=post)
 
 
-@app.route("/delete_post/<post_id>")
-@login_required
-def delete_post(post_id):
+# @app.route("/delete_post/<post_id>")
+# @login_required
+# def delete_post(post_id):
     # None members can't delete a post
     # if "username" not in session:
     #     flash("A post can only be deleted by its creator")
     #     return redirect(url_for("index"))
-    mongo.db.posts.remove({"_id": ObjectId(post_id)})
-    flash("Post Deleted!")
+    # mongo.db.posts.remove({"_id": ObjectId(post_id)})
+    # flash("Post Deleted!")
+    # return redirect(url_for("index"))
+
+
+@app.route("/delete_post/<post_id>")
+@login_required
+def delete_post(post_id):
+    post = mongo.db.posts.find({"_id": post_id})
+    if post:
+        if post["created_by"] == session["user"]:
+            mongo.db.posts.remove({"_id": ObjectId(post_id)})
+            flash("Post Deleted!")
+        else:
+            flash("A post can only be deleted by its creator")
+    else:
+        flash("Not found")
     return redirect(url_for("index"))
 
 
