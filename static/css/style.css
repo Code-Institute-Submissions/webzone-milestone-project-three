@@ -33,6 +33,20 @@ main {
 
 /* --------------------------------------------------------Header/Navigation section */
 
+nav {
+    height: 4.6rem;
+}
+
+nav .nav-wrapper .brand-logo:hover,
+nav .nav-wrapper ul li:hover {
+    background-color: #1e56a0;
+}
+
+nav .nav-wrapper .brand-logo:focus,
+nav .nav-wrapper ul li:focus {
+    background-color: #0e49b5;
+}
+
 nav,
 .side-nav {
     background-color: #163172;

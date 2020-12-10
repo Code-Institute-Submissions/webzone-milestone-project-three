@@ -203,7 +203,7 @@ def edit_post(post_id):
 @app.route("/delete_post/<post_id>")
 @login_required
 def delete_post(post_id):
-    post = mongo.db.posts.find({"_id": post_id})
+    post = mongo.db.posts.find_one({"_id": post_id})
     if post:
         if post["created_by"] == session["user"]:
             mongo.db.posts.remove({"_id": ObjectId(post_id)})
