@@ -103,26 +103,6 @@ def sign_in():
             return redirect(url_for("sign_in"))
 
     return render_template("sign_in.html")
-
-
-# def login_required(f):
-#     @wraps(f)
-#     def wrap(*args, **kwargs):
-#         if "logged_in" in session:
-#             return f(*args, **kwargs)
-#         else:
-#             flash("You need to sign in first")
-#             return redirect(url_for("sign_in"))
-#     return wrap
-# login required decorator
-def login_required(f):
-    @wraps(f)
-    def wrap(*args, **kwargs):
-        if "user" in session and session["user"]:
-            return f(*args, **kwargs)
-        flash("You need to sign in first")
-        return redirect(url_for("sign_in"))
-    return wrap
     
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -135,6 +115,17 @@ def profile(username):
         return render_template("profile.html", username=username)
 
     return redirect(url_for("sign_in"))
+
+
+# Decorator function to add in other function
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if "user" in session and session["user"]:
+            return f(*args, **kwargs)
+        flash("You need to sign in first")
+        return redirect(url_for("sign_in"))
+    return wrap
 
     
 @app.route("/sign_out")
@@ -164,28 +155,35 @@ def create_post():
 
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
+@login_required
 def edit_post(post_id):
-    # None members can't edit a post
-    if "username" not in session:
-        flash("This action is only posible for registered members")
-        return redirect(url_for("sign_up"))
-        
-    if request.method == "POST":
-        post = {
-            "post_title": request.form.get("post_title"),
-            "post_image": request.form.get("post_image"),
-            "image_description": request.form.get("image_description"),
-            "post_content": request.form.get("post_content"),
-            "read_time": request.form.get("read_time"),
-            "created_by": session["user"],
-            "created_at": datetime.utcnow().strftime('%B %d %Y')
-        }
-        mongo.db.posts.update({"_id": ObjectId(post_id)}, post)
-        flash("Post Successfully Updated")
-        return redirect(url_for("index"))
-
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    return render_template("edit_post.html", post=post)
+    if post:
+        # Check if the creator of the post is the currently signed-in user
+        if post["created_by"] == session["user"]:
+            if request.method == "POST":
+                post = {
+                  "post_title": request.form.get("post_title"),
+                  "post_image": request.form.get("post_image"),
+                  "image_description": request.form.get("image_description"),
+                  "post_content": request.form.get("post_content"),
+                  "read_time": request.form.get("read_time"),
+                  "created_by": session["user"],
+                  "created_at": datetime.utcnow().strftime('%B %d %Y')
+                }
+                mongo.db.posts.update({"_id": ObjectId(post_id)}, post)
+                flash("Post Successfully Updated")
+                return redirect(url_for("index"))
+
+            post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+            return render_template("edit_post.html", post=post)
+        # if the signed-in user is not the creator of the post
+        else:
+            flash("A post can only be edited by its creator")
+    # If the post doesn't exist
+    else:
+        flash("Not found")
+    return redirect(url_for("index"))
 
 
 # A user must be signed-in and be the creator of a post to be able to delete it
