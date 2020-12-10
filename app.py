@@ -188,22 +188,11 @@ def edit_post(post_id):
     return render_template("edit_post.html", post=post)
 
 
-# @app.route("/delete_post/<post_id>")
-# @login_required
-# def delete_post(post_id):
-    # None members can't delete a post
-    # if "username" not in session:
-    #     flash("A post can only be deleted by its creator")
-    #     return redirect(url_for("index"))
-    # mongo.db.posts.remove({"_id": ObjectId(post_id)})
-    # flash("Post Deleted!")
-    # return redirect(url_for("index"))
-
-
+# A user must be signed-in and be the creator of a post to be able to delete it
 @app.route("/delete_post/<post_id>")
 @login_required
 def delete_post(post_id):
-    post = mongo.db.posts.find_one({"_id": post_id})
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     if post:
         if post["created_by"] == session["user"]:
             mongo.db.posts.remove({"_id": ObjectId(post_id)})
