@@ -103,7 +103,7 @@ def sign_in():
             return redirect(url_for("sign_in"))
 
     return render_template("sign_in.html")
-    
+
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
@@ -117,7 +117,7 @@ def profile(username):
     return redirect(url_for("sign_in"))
 
 
-# Decorator function to add in other function
+# Request a user to sign in before taking certain actions
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -127,8 +127,9 @@ def login_required(f):
         return redirect(url_for("sign_in"))
     return wrap
 
-    
+
 @app.route("/sign_out")
+@login_required  # Allow only signed-in users to sign out
 def sign_out():
     # remove user from session cookie
     flash("You have been logged out")
@@ -137,6 +138,7 @@ def sign_out():
 
 
 @app.route("/create_post", methods=["GET", "POST"])
+@login_required  # Allow only signed-in users to create post
 def create_post():
     if request.method == "POST":
         post = {
