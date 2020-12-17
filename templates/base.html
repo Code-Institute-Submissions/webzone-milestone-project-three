@@ -2,126 +2,102 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<!-- Link for Font Awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
-		integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-	<!-- Link for Materialize -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-	<!-- Link for Google Fonts -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@100&display=swap"
-		rel="stylesheet">
-	<!-- Link for custom css -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Link for Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!-- Link for Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Link for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <!-- Link for custom css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <!-- Link for Favicon -->
-     <link rel="icon" href="{{ url_for('static', filename='img/webzone_favicon.ico') }}" type="image/favicon">
+    <link rel="icon" href="{{ url_for('static', filename='img/webzone_favicon.ico') }}" type="image/favicon">
 </head>
 
 <body>
-	<!-- Header -->
-	<header>
-		<nav>
-			<div class="nav-wrapper">
-				<a href="{{ url_for('index') }}" class="brand-logo">
-                 <img class="webzone_logo" src="{{ url_for('static', filename='img/webzone_logo_icon.png') }}" alt="Webzone Logo">
-                 <span class="webzone_logo_text">WEBZONE</span>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{{ url_for('index') }}" class="brand-logo">
+                    <img class="webzone_logo" src="{{ url_for('static', filename='img/webzone_logo_icon.png') }}"
+                        alt="Webzone Logo">
+                    <span class="webzone_logo_text">WEBZONE</span>
                 </a>
-				<a href="#" data-activates="mobile-demo"
-					class="button-collapse sidenav-trigger right"><i class="fas fa-bars"></i></a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
-					{% if session.user %}
-					<li><a href="{{ url_for('create_post') }}"><i class="fas fa-plus-square"></i>Create Post</a></li>
-                    <li><a
-							href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>Profile</a>
-					</li>
-					<li><a href="{{ url_for('sign_out') }}"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
-					{% else %}
-					<li><a href="{{ url_for('sign_up') }}"><i class="fas fa-user-plus"></i>Sign Up</a></li>
-					<li><a href="{{ url_for('sign_in') }}"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
-					{% endif %}
-				</ul>
-				<ul class="side-nav" id="mobile-demo">
-					<li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
-					{% if session.user %}
-					<li><a href="{{ url_for('create_post') }}"><i class="fas fa-plus-square"></i>Create Post</a></li>
-                    <li><a
-							href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>Profile</a>
-					</li>
-					<li><a href="{{ url_for('sign_out') }}"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
-					{% else %}
-					<li><a href="{{ url_for('sign_up') }}"><i class="fas fa-user-plus"></i>Sign Up</a></li>
-					<li><a href="{{ url_for('sign_in') }}"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
-					{% endif %}
-				</ul>
-			</div>
-		</nav>
-	</header>
-	<!-- End Header -->
+                <a href="#" data-activates="mobile-demo" class="button-collapse sidenav-trigger right"><i
+                        class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
+                    {% if session.user %}
+                    <li><a href="{{ url_for('create_post') }}"><i class="fas fa-plus-square"></i>Create Post</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}"><i
+                                class="fas fa-user"></i>Profile</a>
+                    </li>
+                    <li><a href="{{ url_for('sign_out') }}"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('sign_up') }}"><i class="fas fa-user-plus"></i>Sign Up</a></li>
+                    <li><a href="{{ url_for('sign_in') }}"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
+                    {% endif %}
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
+                    {% if session.user %}
+                    <li><a href="{{ url_for('create_post') }}"><i class="fas fa-plus-square"></i>Create Post</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}"><i
+                                class="fas fa-user"></i>Profile</a>
+                    </li>
+                    <li><a href="{{ url_for('sign_out') }}"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('sign_up') }}"><i class="fas fa-user-plus"></i>Sign Up</a></li>
+                    <li><a href="{{ url_for('sign_in') }}"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header -->
 
-	<section class="container">
-		<!-- flash messages -->
-		{% with messages = get_flashed_messages() %}
-		{% if messages %}
-		{% for message in messages %}
-		<div class="row flashes">
-			<h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
-		</div>
-		{% endfor %}
-		{% endif %}
-		{% endwith %}
-	</section>
+    <section class="container">
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes">
+            <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </section>
 
-	<main class="container1">
-		{% block content %}
+    <main class="container1">
+        {% block content %}
 
 
-		{% endblock %}
-	</main>
+        {% endblock %}
+    </main>
 
-	<!-- Footer section -->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col s12 m4 l4">
-                   <h4><span> About Us</span></h4>
-                   <p>Webzone is a blogging site for web developers. Get inspired by reading blog post created by others or inspire someone by creating a post.</p>
-				</div>
-                <div class="col s12 m4 l4">
-					<h4><span>Contact Us</span></h4>
-					<p class="contact-info"><i class="fas fa-mobile-alt contact-info-icons"></i>+4531884865</p>
-					<p class="contact-info"><i class="fas fa-envelope contact-info-icons"></i>webzone@contact.com</p>
-					<p class="contact-info"><i class="fas fa-address-card"></i>Nygardterrraserne 253E 3520 Copenhagen</p>
-				</div>
-				<div class="col s12 m4 l4">
-					<h4><span>Connect With Us</span></h4>
-					<ul>
-						<li><a href="https://www.facebook.com/cypriot.man"
-								target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/takafor-anutatu-7783b819b/"
-								target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-						<li><a href="https://github.com/Takaforyannick30"
-								target="_blank"><i class="fab fa-github"></i></a></li>
-						<li><a href="https://www.instagram.com/yannickvasilia/"
-								target="_blank"><i class="fab fa-instagram"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<p class="copyright">TAKAFORYANNICK&copy;2020</p>
-		</div>
-	</footer>
-	<!-- End of footer section -->
+    <!-- Footer section -->
+    <footer>
 
-	<!--Script tag for jQuery-->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<!--Script tag for Materialize-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<!--Script tag for custom js file-->
-	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        {% include "partials/footer.html" %}
+
+    </footer>
+    <!-- End of footer section -->
+
+    <!--Script tag for jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Script tag for Materialize-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--Script tag for custom js file-->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 
