@@ -7,19 +7,20 @@
 }
 
 html {
-   /* font-size: 10px; */
+   font-size: 10px;
+   height: 100%;
+   min-height: 100%;
     
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     line-height: 2rem;
     display: flex;
-    min-height: 100vh; 
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 main {
@@ -34,7 +35,8 @@ main {
 /* --------------------------------------------------------Header/Navigation section */
 
 nav {
-    height: 4.6rem;
+    height: 7rem;
+    font-size: 3rem;
 }
 
 nav .nav-wrapper .brand-logo:hover,
@@ -79,9 +81,9 @@ nav div a .webzone_logo_text {
     font-family: 'Robato-slab', serif;
 }
 
-h3 {
+/* h3 {
     padding-top: 2rem;
-}
+} */
 
  a {
     color: inherit;
@@ -91,47 +93,49 @@ h3 {
     margin: 5px;
 }
 
-
-
-.card {
-    /* display: flex; */
-    height: 20rem;
-    /* overflow: hidden; */
-    width: 100%
+/* Blog post card */
+.post {
+    margin-top: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.50);
 }
 
-.card-image {
-    height: auto;
-    width: 30%;
-    flex: 1;
-    
-}
-
-
-.card-image img {
-    height: 100%;
-    width: 30%;
-    object-fit: cover;
-
-}
-
-.card-stacked {
-    width: 70%;
-}
-
-/* img{
-    width: 100% ;
-    height: auto;
+.post_image {
+    height: 25rem;
     overflow: hidden;
-    object-fit: cover;
 }
 
-.post_image img{
+.post_image a img {
     width: 100%;
-    height: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;   
-} */
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.post_content {
+    padding: 2rem;
+}
+.post_cta {
+    margin-top: 2rem;
+    display: flex;
+}
+
+.button {
+    padding: 0.8rem 2rem;
+    display: inline-block;
+    background-color: rgb(148, 112, 216);
+    border-radius: 0.6rem;
+    text-decoration: none;
+}
+
+.delete_btn {
+    background-color: red;
+    padding: 0.8rem 2rem;
+    border-radius: 0.6rem;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
 
 .post_btn {
     display: flex;
@@ -147,29 +151,6 @@ h3 {
     font-weight: lighter;
 }
 
-/* POST CARD */
-
-/* .post_card {
-    background-color: #ffffff; 
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25)
-
-} */
-
-/* .post_img {
-    height: 3rem; 
-    overflow: hidden;
-} */
-
-.sign_up_page,
-.sign_in_page {
-    background-color: #d6e4f0;
-    margin-top: -1.7rem;
-    padding-bottom: 1rem;
-
-}
-
-
-
 
 /*-------------------------------------------------------------------------------- Footer */
 
@@ -177,11 +158,11 @@ footer {
     background-color: #163172;
     color: #ffffff;
     font-weight: lighter;
+    margin-top: 3rem;
     border-top: 2px solid #1e56a0;
     text-align: center;
     padding-bottom: 1rem;
     display: flex;
-    margin-top: -1.3rem;
 }
 
 footer a {
@@ -217,6 +198,27 @@ footer ul li{
 }
 
 /* ------------------------------------------------------------------------Media queries */
+@media screen and (min-width: 900px) {
+
+    .post {
+        display: flex;
+        height: 25rem;
+        overflow: hidden;
+    }
+
+    .post-image {
+        height: auto;
+        flex: 1;
+    }
+
+    .post-content {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     /* For mobile phones */
 
@@ -232,4 +234,5 @@ footer ul li{
         font-size: 1.7rem;
     }
 
-} */
+} 
+
