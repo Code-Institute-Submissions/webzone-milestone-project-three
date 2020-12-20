@@ -207,13 +207,13 @@ def delete_post(post_id):
 # Error handler for page not found
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template("errors/404.html"), 404
+    return render_template("errors/error_404.html"), 404
 
 
 # Error handler for internal server error
 @app.errorhandler(500)
 def something_went_wrong(error):
-    return render_template("errors/500.html"), 500
+    return render_template("errors/error_500.html"), 500
 
 
 if __name__ == "__main__":

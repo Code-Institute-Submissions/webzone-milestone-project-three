@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
+
+<!-- Error message -->
 <h3 class="center-align">500</h3>
+
+<!-- Error message card -->
 <div class="error_card">
     <div class="error_icon"><i class="far fa-frown"></i></div>
     <h3>Ooops... Something went wrong</h3>
     <p>We are currently experiencing some difficulties on our end. Please try again in the nearest future!</p>
+    <!-- Redirect to Home page -->
+    <div class="error_card_redirect_link"><a href="{{ url_for('index') }}" class="error_card_link">Back to Home page</a>
+    </div>
 </div>
 {% endblock %}

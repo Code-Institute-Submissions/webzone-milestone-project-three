@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
+
+<!-- Error message -->
 <h3 class="center-align">404</h3>
+
+<!-- Error message card -->
 <div class="error_card">
     <div class="error_icon"><i class="far fa-frown"></i></div>
     <h3>Ooops... Page not found</h3>
     <p>The page you are trying to access might have been removed, had its name changed, or is temporarily unavailable.
         Please check that the web site address is spelled correctly or click bellow!</p>
-    <!-- Link to redirect to Home page -->
+    <!-- Redirect to Home page -->
     <div class="error_card_redirect_link"><a href="{{ url_for('index') }}" class="error_card_link">Back to Home page</a>
     </div>
 </div>
