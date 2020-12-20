@@ -15,8 +15,8 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.8rem;
-    line-height: 2rem;
+    font-size: 2.1rem;
+    line-height: 3rem;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -36,7 +36,6 @@ main {
 
 nav {
     height: 7rem;
-    font-size: 3rem;
 }
 
 nav .nav-wrapper .brand-logo:hover,
@@ -63,8 +62,8 @@ nav,
 }
 
 .webzone_logo {
-    width: 2.5rem;
-    height: 2.5rem;  
+    width: 3.5rem;
+    height: 3.5rem;  
 }
 
 nav div a img {
@@ -73,6 +72,11 @@ nav div a img {
 
 nav div a .webzone_logo_text {
     margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+nav .nav-wrapper ul li a {
+    font-size: 2rem;
 }
 
 /* -----------------------------------------------------------------Blog post components */
@@ -151,6 +155,40 @@ nav div a .webzone_logo_text {
     font-weight: lighter;
 }
 
+/*........................................................................... Error pages */
+
+.error_card {
+    background-color: #d6e4f0;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.error_icon {
+    margin-top: 2rem;
+    font-size: 5rem;
+}
+
+.error_card_redirect_link {
+    margin: 2rem auto;
+}
+
+.error_card_link {
+    background-color: #163172;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+}
+
+.error_card_link:hover {
+    background-color: #1e56a0;
+    transition-duration: 2s;
+}
+
+.error_card_link:focus {
+    background-color: #1827f1;
+}
 
 /*-------------------------------------------------------------------------------- Footer */
 

@@ -204,6 +204,12 @@ def delete_post(post_id):
     return redirect(url_for("index"))
 
 
+# Error handler for page not found
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("errors/404.html"), 404
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
