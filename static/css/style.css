@@ -78,8 +78,41 @@ nav div a .webzone_logo_text {
 nav .nav-wrapper ul li a {
     font-size: 2rem;
 }
+/* -----------------------------------------------------------------Button */
+
+.button {
+    border: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: .2rem;
+    display: inline-block;
+    font-size: 2rem;
+    margin: .4rem .8rem;
+    
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.button:hover {
+    box-shadow: .5rem .5rem 1rem  rgba(0,0,0,0.57);
+}
+
+.button:focus {
+    box-shadow: .2rem .2rem .5rem;
+}
+
+.modal-footer .button {
+    margin-top: -5rem;
+}
+
+.sign_up_button,
+.sign_in_button {
+    width: 100%;
+}
 
 /* -----------------------------------------------------------------Blog post components */
+
 .post-heading,
 .modal-heading {
     font-family: 'Robato-slab', serif;
@@ -93,9 +126,6 @@ nav .nav-wrapper ul li a {
     color: inherit;
 }
 
-.btn {
-    margin: 5px;
-}
 
 /* Blog post card */
 .post {
@@ -124,23 +154,6 @@ nav .nav-wrapper ul li a {
     display: flex;
 }
 
-.button {
-    padding: 0.8rem 2rem;
-    display: inline-block;
-    background-color: rgb(148, 112, 216);
-    border-radius: 0.6rem;
-    text-decoration: none;
-}
-
-.delete_btn {
-    background-color: red;
-    padding: 0.8rem 2rem;
-    border-radius: 0.6rem;
-    display: inline-block;
-    margin-right: 2rem;
-}
-
-
 .post_btn {
     display: flex;
     margin-left: 0;
@@ -151,7 +164,6 @@ nav .nav-wrapper ul li a {
 }
 
 .mute_text{
-    /* font-size: 1rem; */
     font-weight: lighter;
 }
 
@@ -263,6 +275,11 @@ footer ul li{
     nav div .brand-logo {
         margin-left: -10%;
     }
+
+    .button{
+        padding: .7rem;
+        font-size: 1.5rem;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -270,6 +287,11 @@ footer ul li{
     nav div .brand-logo {
         margin-left: -15%;
         font-size: 1.7rem;
+    }
+
+       .button{
+        padding: .5rem;
+        font-size: 1.2rem;
     }
 
 } 
