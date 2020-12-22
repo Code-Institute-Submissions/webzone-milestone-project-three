@@ -59,6 +59,60 @@ To understand how to create a blogging app, I  researched tutorials with Python
 
 I wanted to keep it simple while practicing responsive design.
 
+## Features
+
+### Functionality
+
+The app uses Python logic to allow users to sign-in, or sign-up for a free account. The app offers CRUD operations to allow users to create, read, update, and delete blog posts. In addition, users can search for a blog post using keywords.
+
+### Existing Features
+
+- **Navbar/Sidenav Links** - The navbar and sidenav links vary depending on whether the user is logged in or not. If the user isn't logged in, the Home, Sign Up and Sign In links are shown on the navigation bar. When the user is logged in, the Home, Create Post, Profile, and Sign Out links are shown.
+
+- **Sign Up** - Allows new users to sign-up for a free account. The form's username field and password field only accept letters and or numbers. I've included checks to ensure that the username doesn't already exist in the database before users are successfully registered. The password is been harshed before stored in the database for security purposes.  
+
+- **Sign In** - Allows existing users to sign-in into their account. I've included authorization checks to verify the username and password (hashed password) against the details stored in the database before users can be logged in. If the username and passowrd matches, the user will successfully sign-in.
+
+- **Flash Messages** - The flash messages are been displayed at the top of the page below the navigation bar when the user performs certain actions. These messages differ based on user interaction and provides helper messages for users.
+
+- **Search** - A user can search for a particular post by typing a keyword into the search bar , and the results are subsequently displayed when the user clicks the Search button. For example, if the user searches for 'Python', the results will show all Post with the keyword 'Python' in theit titles. The form field is required, and the user can't submit the form without entering a keyword of minimum 3 characters e.g 'git'. If there is no post in the databse with any keyword provided by the user, upon clicking the search button 'No Result Found' will be displayed on the screen of the user's device.
+
+- **Reset Button** - The reset button is available in the Search bar. Clicking the Reset button refreshes the 'home' page and restores its default values.
+
+- **Create Post** - Create operation. Allows the user to add a new post to the site and database. All input fields must be filled. A user is expected to paste the link of an image they inturn to use as their post image. If the link is not correct then the image will appear broken and there is not default image at the moment.
+
+- **Edit Post** - Update operation. All existing recipe values are pre-populated in the relevant form fields, which the user is able to edit if required. Upon form submission, the recipe database record is updated with the new values. Additionally, the last edited date field in the recipe record is updated with the current date.
+
+- **Delete Post** - The Delete button is only available if a user is logged in and if the post was created by the user. Clicking the button triggers the Delete modal, which asks the user to confirm the deletion request. If the user confirms the deletion, the post will be deleted.
+
+- **Cancel Button (Edit Post Page and Delete Popup Modal)** - There is a 'Cancel' button on the Edit post page and on the Delete Popup Modal. The 'Cancel' button on the edit page redirect the user back to the Home page. And the 'Cancel' button on the Delete modal popup is meant to close the popup.
+
+- **Profile Page** - The profile page displays the owner of the profile.
+
+- **Custom Error Pages** - I've included two custom error pages namely error_404.html - for 'page not found' errors and error_500.html - for 'Internal server errors. 
+
+### Features Left To Implement
+
+- **Rate Post** - In the future I would like to add rating functionality to allow logged-in users to rate any blog post. 
+
+- **Like Post** - In the future I would like to add a 'like' functionality to allow logged-in users to like any blog post. The liked post will be displayed on the user's profile. And all post will show the number of 'like' it has. If it has none it will show 'Be the first to like' when a user hovers on the like icon.
+
+- **Unlike Post** - In the future I would like to add an 'unlike' functionality to allow logged-in users to unlike any blog post they had previously liked. The unliked post will be removed from the user's profile. 
+
+- **Commenting On Post** - I would like to add a feature which allows logged-in users to comment on any post to share their thoughts about the post or reply to other comments.
+
+- **Messaging Other Registered Users** - I would like to add a feature to allow logged-in users to quickly message other registered users.
+
+- **Change Password** - I would like to add a functionality which allows registered users to change their password. A registed user will have to confirm his/her current password in other to change it.
+
+- **Delete Account** - I would like to add a functionality which allows registered users to delete their account. Password confirmation will be required for deleting an account.
+
+- **User's Post** - I would like to add a functionality to view all post created by any user by clicking on the author's name of any blog post.
+
+- **Update Flash Messages** - I would like to update the functionality/logic of the flash messages to display different colors depending on the context of the flash message e.g a flash message such as 'Post Deleted' will have a red background color.
+
+- **Pagination** - I would like to add pagination on the home page and on search results so that only a limited number of post will be displayed at a time. 
+
 ## Technologies Used
 
 ### languages used

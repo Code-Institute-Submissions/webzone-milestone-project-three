@@ -5,11 +5,10 @@
         <div class="post_image"> <img class="responsive-img" src="{{post.post_image}}"> </div>
         <p class="mute_text">{{post.image_description}}</p>
         <h2 class="post-heading"> {{post.post_title}}</h2>
-        <p class="mute_text">by {{post.created_by}} - {{post.created_at}} </p>
-        <p class="mute_text"> {{post.read_time}} min read</p>
-        <p>{{post.post_content}}</p>
-        <!-- Delete and Edit post buttons only viewable to logged in users -->
-        <!-- <div class="col "> -->
+        <p class="mute_text1">By {{post.created_by}} - {{post.created_at}} </p>
+        <p class="mute_text1"> {{post.read_time}} min read</p>
+        <p class="gray">{{post.post_content}}</p>
+        <!-- Delete and Edit post buttons only viewable to logged-in users -->
         {% if session.user|lower == post.created_by|lower %}
         <div class="post_btn">
             <button data-target="modal1" class="button red modal-trigger"><i class="fas fa-trash-alt"></i>Delete</button>

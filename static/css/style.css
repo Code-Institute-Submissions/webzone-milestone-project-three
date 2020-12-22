@@ -84,10 +84,10 @@ nav .nav-wrapper ul li a {
     border: none;
     color: #ffffff;
     text-transform: uppercase;
-    padding: 1rem;
+    padding: .5rem 1rem;
     border-radius: .2rem;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: .4rem .8rem;
     
     -webkit-transition-duration: 0.3s;
@@ -129,9 +129,20 @@ nav .nav-wrapper ul li a {
 
 /* Blog post card */
 .post {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     background-color: #fff;
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.50);
+    transition-duration: 0.3s;
+    box-shadow: 0 0 .7rem #1e56a0;
+}
+
+.post:hover {
+    box-shadow: .5rem .5rem 1rem  rgba(0,0,0,0.57);
+
+}
+
+
+.post:focus {
+    box-shadow: .2rem .2rem .5rem rgba(0,0,0,0.57);
 }
 
 .post_image {
@@ -149,6 +160,11 @@ nav .nav-wrapper ul li a {
 .post_content {
     padding: 2rem;
 }
+
+.gray {
+    color: #808080;
+}
+
 .post_cta {
     margin-top: 2rem;
     display: flex;
