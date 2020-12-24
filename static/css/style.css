@@ -7,25 +7,18 @@
 }
 
 html {
-   font-size: 10px;
+   /* font-size: 10px; */
    height: 100%;
    min-height: 100%;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 2.1rem;
+    font-size: 1.3rem;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-}
-
-
-input,
- label,
- textarea {
-  font-size: 1.8rem !important;
 }
 
 main {
@@ -34,13 +27,13 @@ main {
 
 /* For all Font Awesome Icons */
 .fas {
-    margin-right: 5px;
+    margin-right: .4rem;
 }
 
 /* --------------------------------------------------------Header/Navigation section */
 
 nav {
-    height: 6.8rem;
+    height: 4.5rem;
 }
 
 nav .nav-wrapper .brand-logo:hover {
@@ -70,22 +63,22 @@ nav,
 }
 
 .webzone_logo {
-    width: 3.5rem;
-    height: 3.5rem;  
+    width: 2.5rem;
+    height: 2.5rem;  
     margin-left: 1rem;
 }
 
 nav div a img {
-    margin-bottom: -0.5rem;
+    margin-bottom: -0.4rem;
 }
 
 nav div a .webzone_logo_text {
     margin-bottom: 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 nav .nav-wrapper ul li a {
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 /* -----------------------------------------------------------------Buttons */
 
@@ -93,17 +86,17 @@ nav .nav-wrapper ul li a {
     border: none;
     color: #ffffff;
     text-transform: uppercase;
-    padding: .5rem 1rem;
+    padding: .4rem .8rem;
     border-radius: .2rem;
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: .5rem 1rem;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
 
 .button:hover {
-    box-shadow: .5rem .5rem 1rem  rgba(0,0,0,0.57);
+    box-shadow: .3rem .3rem .8rem  rgba(0,0,0,0.57);
 }
 
 .button:focus {
@@ -111,16 +104,17 @@ nav .nav-wrapper ul li a {
 }
 
 .modal-footer .button {
-    margin-top: -5rem;
+    margin-top: -3.3rem;
 }
 
 .sign_up_button,
 .sign_in_button {
     width: 100%;
+    margin: 1rem auto;
 }
 
 .view_page_cta_buttons {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .cancel_button {
@@ -130,9 +124,11 @@ nav .nav-wrapper ul li a {
 }
 /* -----------------------------------------------------------------Blog post components */
 
-.post-heading,
-.modal-heading {
+.post_title,
+.modal_heading,
+.page_title {
     font-family: 'Robato-slab', serif;
+    font-size: 2.6rem;
 }
 
  a {
@@ -157,7 +153,7 @@ nav .nav-wrapper ul li a {
 }
 
 .post_image {
-    height: 25rem;
+    height: 15.5rem;
     overflow: hidden;
 }
 
@@ -169,7 +165,7 @@ nav .nav-wrapper ul li a {
 }
 
 .post_content {
-    padding: 1.5rem;
+    padding: .9rem;
 }
 
 .gray {
@@ -177,7 +173,7 @@ nav .nav-wrapper ul li a {
 }
 
 .post_cta {
-    margin-top: 1.5rem;
+    margin-top: .9rem;
     display: flex;
 }
 
@@ -195,7 +191,7 @@ nav .nav-wrapper ul li a {
 }
 
 .small_text {
-    font-size: 1.4rem;
+    font-size: .9rem;
 }
 
 .view_page_post_image {
@@ -205,25 +201,25 @@ nav .nav-wrapper ul li a {
 
 .error_card {
     background-color: #d6e4f0;
-    margin-top: 1.5rem;
-    border-radius: 0.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
+    margin-top: 1rem;
+    border-radius: .4rem;
+    padding-top: .4rem;
+    padding-bottom: .8rem;
     text-align: center;
 }
 
 .error_icon {
-    margin-top: 1.5rem;
-    font-size: 5rem;
+    margin-top: .7rem;
+    font-size: 3.2rem;
 }
 
 .error_card_redirect_link {
-    margin: 2rem auto;
+    margin: 1.25rem auto;
 }
 
 .error_card_link {
     background-color: #163172;
-    padding: 0.5rem 1rem;
+    padding: .4rem .8rem;
     color: #ffffff;
 }
 
@@ -242,20 +238,20 @@ footer {
     background-color: #163172;
     color: #ffffff;
     font-weight: lighter;
-    margin-top: 3rem;
+    margin-top: 2rem;
     border-top: 2px solid #1e56a0;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: .8rem;
     display: flex;
 }
 
 footer a {
   display: inline-block;
-  font-size: 2.1rem;
+  font-size: 1.3rem;
   border: 1px solid #ffffff;
-  padding: 12px;
-  border-radius: 5px;
-  margin: 5px 10px;
+  padding: .5rem;
+  border-radius: .4rem;
+  margin: .4rem .8rem;
 }
 
 footer span {
@@ -286,7 +282,7 @@ footer ul li{
 
     .post {
         display: flex;
-        height: 25rem;
+        height: 15.5rem;
         overflow: hidden;
     }
 
@@ -311,8 +307,8 @@ footer ul li{
     }
 
     .button{
-        padding: .7rem;
-        font-size: 1.5rem;
+        padding: .6rem;
+        font-size: .9rem;
     }
 }
 
@@ -320,12 +316,12 @@ footer ul li{
     
     nav div .brand-logo {
         margin-left: -15%;
-        font-size: 1.7rem;
+        font-size: 1.1rem;
     }
 
        .button{
-        padding: .5rem;
-        font-size: 1.2rem;
+        padding: .35rem;
+        font-size: .75rem;
     }
 } 
 

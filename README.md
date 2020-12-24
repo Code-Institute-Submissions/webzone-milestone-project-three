@@ -17,6 +17,7 @@
     - [Libraries And Frameworks](#Libraries-And-Frameworks)
     - [Tools Used](#Tools-Used)
 - [**Testing**](#Testing)
+    - [Testing User Stories](#Testing-User-Stories)
     - [Manual Test](#Manual-Test)
     - [Errors](#Errors)
     - [HTML, CSS, JavaScript and Python Code Validation](#HTML-CSS-JavaScript-And-Python-Code-Validation)
@@ -41,7 +42,11 @@ I created this application to serve the purpose of my Data-Centric Development M
 
 ### User Stories
 
-* As a user, I want a blogging site where I can read posts about web development.
+* As a user, I want a blogging site where I can read blog posts about web development.
+
+* As a user, I want to be able to create an account.
+
+* As a user, I want to be able to sign-in and sign-out of my account.
 
 * As a user, I want to be able to create my own posts about web development so that I can inspire others. 
 
@@ -168,6 +173,82 @@ Chrome DevTools is a set of web developer tools built directly into the Google C
 * [Balsamiq](https://balsamiq.com/)
 
 Balsamiq Wireframes is a rapid low-fidelity UI wireframing tool that reproduces the experience of sketching on a notepad or whiteboard, but using a computer. Balsamiq wireframes was used in producing the wireframes for this project.
+
+## Testing
+
+This project has undergone extremely thorough testing. The user story of this project achieved the intended outcome. The manual test was carried out at every stage to ensure user experience standards remained at consistently high levels with each new implementation.
+
+The Webzone application was tested across multiple browsers such as Google Chrome, Safari, Microsoft Edge, Mozilla Firefox, and Opera Mini. It was also tested on multiple mobile devices such as iPhone 4, 5, 7, 8(plus) Chrome and Safari, iPad, Samsung Galaxy, and Huawei P30 Pro to ensure compatibility and responsiveness.
+
+### Testing User Stories
+
+-  **As a user, I want a blogging site where I can read blog posts about web development.** 
+
+1. Click on the "Home" link on the navbar or on the "WEBZONE" logo. They all lead to the home page where blog post are been displayed from the newest at the top to the oldest at the bottom.
+
+-  **As a user, I want to be able to create an account.**
+
+1. Click on the "Sign Up" link on the navbar. 
+
+2. Fill in the Sign Up form with a username and password. The username and password must be between 5 to 15 characters(letters or numbers). 
+
+3. Click on the "Sign Up" button which is on the Sign Up form. Kindly note the Sign Up link on the navigation bar only redirects a user to the Sign Up form. 
+
+4. Flash message will appear saying "Registration Successfull!"
+
+- **As a user, I want to be able to sign-in and sign-out of my account.**
+
+* Sign In 
+
+1. Click on the "Sign In" link in the navbar. 
+
+2. Fill in the Sign In form with your username and password. 
+
+3. Click on the "Sign In" button on the Sign In form. Kindly note the "Sign In" link on the navigation bar only redirects a user to the "Sign In form". 
+
+4. Flash message will appear saying "Welcome, (username)" 
+
+* Sign Out 
+
+1. Click on the "Sign Out" link in the navbar. 
+
+2. A flash message will appear saying "You have been logged out!"
+
+- **As a user, I want to be able to create my own posts about web development so that I can inspire others.** 
+
+1. Click on the "Create Post" link on the navbar. 
+
+2. Fill in the "Create Post" form. All fields are required. 
+
+3. Click on "Create Post" button. 4. Flash message will appear saying "Post Successfully Created!"
+
+- **As a user, I want to be able to edit and update any post I create in case of any mistake or new additional information.**
+
+1. Click on the "EDIT POST" button displayed on the post you want to edit. 
+
+2. Update the Form while taking into consideration that all fieds are required. 
+
+3. Click on the "UPDATE POST" button. 
+
+4. A flash message will appear saying "Post Successfully Updated!"
+
+- **As a user, I want to be able to search for posts about a particular topic in web development using keywords.**
+
+1. Type any keyword in the search bar. 
+
+2. Click on the "Search" button.
+
+- **As a user, I want to be able to delete any post created by me if I choose to do so.**
+
+1. Click on the "DELET POST" button displayed on the post you want to delete. The "DELETE POST" button can be found on the home page or on the view post page. A Modal pop-up will appear when the button is clicked. 
+
+2. Click on the "DELETE POST" button on the pop up to confirm. 
+
+3. A flash message will appear saying "Post deleted!"
+
+### Manual Test
+
+
 
 ## Deployment
 
