@@ -53,8 +53,6 @@ def view_post(post_id):
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
-# def sign_up():
-#     return render_template("sign_up.html")
 def sign_up():
     if request.method == "POST":
         # check if username already exists in db
@@ -90,8 +88,7 @@ def sign_in():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for(
-                    "profile", username=session["user"]))
+                return redirect(url_for("index"))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")

@@ -10,17 +10,22 @@ html {
    font-size: 10px;
    height: 100%;
    min-height: 100%;
-    
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 2.1rem;
-    line-height: 3rem;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
+}
+
+
+input,
+ label,
+ textarea {
+  font-size: 1.8rem !important;
 }
 
 main {
@@ -35,10 +40,14 @@ main {
 /* --------------------------------------------------------Header/Navigation section */
 
 nav {
-    height: 7rem;
+    height: 6.8rem;
 }
 
-nav .nav-wrapper .brand-logo:hover,
+nav .nav-wrapper .brand-logo:hover {
+    background-color: #1e56a0;
+    padding-right: .5rem;
+}
+
 nav .nav-wrapper ul li:hover {
     background-color: #1e56a0;
 }
@@ -48,11 +57,10 @@ nav .nav-wrapper ul li:focus {
     background-color: #0e49b5;
 }
 
+
 nav,
 .side-nav {
     background-color: #163172;
-    padding-inline-start: 1rem;
-    padding-inline-end: 1rem;
     border-bottom: 2px solid #1e56a0;
 }
 
@@ -64,6 +72,7 @@ nav,
 .webzone_logo {
     width: 3.5rem;
     height: 3.5rem;  
+    margin-left: 1rem;
 }
 
 nav div a img {
@@ -78,7 +87,7 @@ nav div a .webzone_logo_text {
 nav .nav-wrapper ul li a {
     font-size: 2rem;
 }
-/* -----------------------------------------------------------------Button */
+/* -----------------------------------------------------------------Buttons */
 
 .button {
     border: none;
@@ -88,8 +97,7 @@ nav .nav-wrapper ul li a {
     border-radius: .2rem;
     display: inline-block;
     font-size: 1.5rem;
-    margin: .4rem .8rem;
-    
+    margin: .5rem 1rem;
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
@@ -99,7 +107,7 @@ nav .nav-wrapper ul li a {
 }
 
 .button:focus {
-    box-shadow: .2rem .2rem .5rem;
+    box-shadow: .1rem .1rem .3rem;
 }
 
 .modal-footer .button {
@@ -111,6 +119,15 @@ nav .nav-wrapper ul li a {
     width: 100%;
 }
 
+.view_page_cta_buttons {
+    margin-top: 2rem;
+}
+
+.cancel_button {
+    border: 2px solid gray;
+    color: gray;
+    background-color: #ffffff;
+}
 /* -----------------------------------------------------------------Blog post components */
 
 .post-heading,
@@ -118,28 +135,22 @@ nav .nav-wrapper ul li a {
     font-family: 'Robato-slab', serif;
 }
 
-/* h3 {
-    padding-top: 2rem;
-} */
-
  a {
     color: inherit;
 }
 
-
 /* Blog post card */
 .post {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     background-color: #fff;
     transition-duration: 0.3s;
     box-shadow: 0 0 .7rem #1e56a0;
 }
 
 .post:hover {
-    box-shadow: .5rem .5rem 1rem  rgba(0,0,0,0.57);
+    box-shadow: .3rem .3rem 1rem  rgba(0,0,0,0.57);
 
 }
-
 
 .post:focus {
     box-shadow: .2rem .2rem .5rem rgba(0,0,0,0.57);
@@ -158,7 +169,7 @@ nav .nav-wrapper ul li a {
 }
 
 .post_content {
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .gray {
@@ -166,7 +177,7 @@ nav .nav-wrapper ul li a {
 }
 
 .post_cta {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     display: flex;
 }
 
@@ -183,11 +194,18 @@ nav .nav-wrapper ul li a {
     font-weight: lighter;
 }
 
+.small_text {
+    font-size: 1.4rem;
+}
+
+.view_page_post_image {
+    margin-top: 1rem;
+}
 /*........................................................................... Error pages */
 
 .error_card {
     background-color: #d6e4f0;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     border-radius: 0.5rem;
     padding-top: 0.5rem;
     padding-bottom: 1rem;
@@ -195,7 +213,7 @@ nav .nav-wrapper ul li a {
 }
 
 .error_icon {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     font-size: 5rem;
 }
 
@@ -309,6 +327,5 @@ footer ul li{
         padding: .5rem;
         font-size: 1.2rem;
     }
-
 } 
 

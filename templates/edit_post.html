@@ -1,59 +1,61 @@
 {% extends "base.html" %}
 {% block content %}
-	<h3 class="center-align">Edit Post</h3>
+<h3 class="center-align">Edit Post</h3>
 
-	<!-- Edit post form -->
-	<div class="row">
-		<form class="col s12" method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
-			<!-- Post title -->
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="post_title" name="post_title" minlength="5" maxlength="50" value="{{ post.post_title }}"
-                        type="text" class="validate" required>
-					<label for="post_title">Post Title</label>
-				</div>
-			</div>
-			<!-- Post image -->
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="post_image" name="post_image" value="{{ post.post_image }}"
-                        type="text" class="validate"   required>
-					<label for="post_image">Post Image URL</label>
-				</div>
-			</div>
-			<!-- Post image description or credit -->
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="image_description" name="image_description" value="{{ post.image_description }}" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
-					<label for="image_description">Image Description</label>
-				</div>
-			</div>
-			<!-- Post content -->
-			<div class="row">
-				<div class="input-field col s12">
-					<textarea id="post_content" name="post_content" class="materialize-textarea validate" required>{{ post.post_content }}</textarea>
-					<label for="post_content">Post Content</label>
-				</div>
-			</div>
-			<!-- Read time -->
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="read_time" name="read_time" minlength="5" maxlength="20" value="{{ post.read_time }}"
-                        type="text" class="validate" required>
-					<label for="read_time">Read Time</label>
-				</div>
-			</div>
-			<!-- Update post and cancel button -->
-			<div class="row">
-				<div class="col s12 center-align">
-					<button type="submit" class="button light-blue">
-                      <i class="fas fa-pen"></i>  Update Post
+<!-- Edit post form -->
+<div class="row">
+    <form class="col s12" method="POST" action="{{ url_for('edit_post', post_id=post._id) }}">
+        <!-- Post title -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="post_title" name="post_title" minlength="5" maxlength="50" value="{{ post.post_title }}"
+                    type="text" class="validate form_text" required>
+                <label for="post_title" class="form-text">Post Title</label>
+            </div>
+        </div>
+        <!-- Post image -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="post_image" name="post_image" value="{{ post.post_image }}" type="text" class="validate"
+                    required>
+                <label for="post_image">Post Image URL</label>
+            </div>
+        </div>
+        <!-- Post image description or credit -->
+        <div class="row">
+            <div class="input-field col lg6 md6 s12">
+                <input id="image_description" name="image_description" value="{{ post.image_description }}"
+                    minlength="5" maxlength="50" type="text" class="validate" required>
+                <label for="image_description">Image Description</label>
+            </div>
+        </div>
+        <!-- Post content -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="post_content" name="post_content" class="materialize-textarea form_text validate"
+                    required>{{ post.post_content }}</textarea>
+                <label for="post_content">Post Content</label>
+            </div>
+        </div>
+        <!-- Read time -->
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="number" id="read_time" name="read_time" min="1" max="30" value="{{ post.read_time }}"
+                    class="validate" required>
+                <!-- <label for="read_time">Read Time</label> -->
+                <label for="read_time">Read time in minutes (between 1 and 30):</label>
+            </div>
+        </div>
+        <!-- Update post and cancel button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="button light-blue">
+                    <i class="fas fa-pen"></i> Update Post
                 </button>
-					<a href="{{ url_for('index') }}"
-						class="red button text-shadow"><i class="fas fa-window-close"></i>Cancel</a>
-				</div>
-			</div>
-		</form>
-	</div>
+                <a href="{{ url_for('index') }}" class="button cancel_button"><i
+                        class="fas fa-window-close"></i>Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
 {% endblock %}

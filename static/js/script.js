@@ -4,10 +4,21 @@ $(".button-collapse").sideNav({edge: "right"});
 $('.modal').modal();
 });
 
-// Function for read time numeric dropdown
-$(function(){
-    let $select = $(".read_time");
-    for (i=1;i<=30;i++){
-        $select.append($('<option></option>').val(i).html(i))
-    }
-});
+// Function to display flash messages
+function flashMessages() {
+    $(".flash_messages").addClass(".show");
+    setTimeout(function() {
+        $(".flash_messages").removeClass(".show");
+    }, 2000);
+}
+
+flashMessages();
+
+// function showFlashMessages() {
+//     $(".flash_messages").addClass(".show");
+//     setTimeout(function() {
+//         $(".flash_messages").removeCremoveClass(".show");
+//     }, 2000);
+// }
+
+// showFlashMessages();
