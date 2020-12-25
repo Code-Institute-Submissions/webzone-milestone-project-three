@@ -64,6 +64,40 @@ To understand how to create a blogging app, I  researched tutorials with Python
 
 I wanted to keep it simple while practicing responsive design.
 
+### Wireframes
+
+The wireframes used in this project were built using Balsamiq Wireframes. These were the first versions but in the development process, there were many changes. This was due to visual preferences and feedback received from my mentor, and also other users who tested my website.
+
+ Some changes can be seen in the fact that my  wireframes have pagination but however, I was not able to implemt it on time. I also removed the "view" button and made the post image and contents clickable. And upon clicking, it redirects a user to the view post page where a user can read the post contant. In addition, I added the word "Post" to all post call to action buttons such as "DELETE POST". Futhermore, the search bar on my wireframe does not have any button but on my website I decided to add a "RESET" and a "SEARCH" button.
+
+[Home - signed-in user preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/home_user_in_session.pdf)
+
+[Home - no user signed-in preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/home_no_user.pdf)
+
+[Create post preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/create_post_preview.pdf)
+
+[Delete popup preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/delete_popup_preview.pdf)
+
+[Edit post preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/edit_post_preview.pdf)
+
+[Profile page preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/profile_user.pdf)
+
+[Search - no result found](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/search_no_result_found.pdf)
+
+[Search - results found](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/search_results_found.pdf)
+
+[Sign In page preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/sign_in_page_preview.pdf)
+
+[Sign Up page preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/sign_up_page_preview.pdf)
+
+[View post - no signed-in user preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/view_post_no_user.pdf)
+
+[View post - signed-in user preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/view_post_user.pdf)
+
+
+
+
+
 ## Features
 
 ### Functionality
