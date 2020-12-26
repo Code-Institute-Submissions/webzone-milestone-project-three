@@ -19,9 +19,11 @@
 - [**Testing**](#Testing)
     - [Testing User Stories](#Testing-User-Stories)
     - [Manual Test](#Manual-Test)
-    - [Errors](#Errors)
     - [HTML, CSS, JavaScript and Python Code Validation](#HTML-CSS-JavaScript-And-Python-Code-Validation)
     - [Mobile Friendly Test](#Mobile-Friendly-Test)
+    - [Errors](#Errors)
+    - [Resolved Errors](#Resolved-Errors)
+    - [Unresolved Errors](#Unresolved-Errors)
 - [**Deployment**](#Deployment)
   - [Live App Link](#Live-App-Link)
   - [Repository Link](#Repository-Link)
@@ -38,7 +40,7 @@ WEBZONE is a blogging application for web development. It is a place where user
 
 I created this application to serve the purpose of my Data-Centric Development Milestone Project at Code Institute. The project scope was to create a web app using Python and a no-SQL database (MongoDB), which uses CRUD operations to allow users to easily create, read, update, and delete blog posts.The front-end display and functionality uses HTML, CSS, and JavaScript. The back-end functionality uses Python, Flask, and MongoDB.
 
-![WEBZONE - multi-screen preview](static/images/webzone_multi_sreen_preview.png)
+![WEBZONE - multi-screen preview](static/img/webzone_multi_sreen_preview.png)
 
 ## UX
 
@@ -123,6 +125,8 @@ The app uses Python logic to allow users to sign-in, or sign-up for a free accou
 - **Delete Post** - The Delete button is only available if a user is logged in and if the post was created by the user. Clicking the button triggers the Delete modal, which asks the user to confirm the deletion request. If the user confirms the deletion, the post will be deleted.
 
 - **Cancel Button (Edit Post Page and Delete Popup Modal)** - There is a 'Cancel' button on the Edit post page and on the Delete Popup Modal. The 'Cancel' button on the edit page redirect the user back to the Home page. And the 'Cancel' button on the Delete modal popup is meant to close the popup.
+
+- **Footer** - My website has a footer section with three subsection and a copyright info. The subsections includes; About Us, Contact Us and Connect With Us. The "Connect With Us" section contains Icons of social platforms such as GitHub, Facebook, Instagram and LinkeLinkedIn. When a user clicks on any of these icons they will be redirected to the website of the social platform.
 
 - **Profile Page** - The profile page displays the owner of the profile.
 
@@ -299,6 +303,8 @@ The Webzone application was tested across multiple browsers such as Google Chrom
 
 ### Manual Test
 
+In addition to testing the user stories, I did some additional manual test such as testing that the error handler works as expected. I was able to test the 404 error handler by editing the url of a particular page on my website such as replacing the word "view_post" on the url with "contact". Upon doing this the error_404.html template was been rendered to the browser. I was not able to test the error-500 handler for internal server error because I had no idea how to manually make my website develope an internal server error. But I do believe the error_500.html template will be rendered in such an event.
+
 ### HTML, CSS, JavaScript and Python Code Validation
 
 * I used the [W3C HTML Validator tool](https://validator.w3.org/#validate_by_input) to validate my HTML code.
@@ -309,6 +315,30 @@ The Webzone application was tested across multiple browsers such as Google Chrom
 * I used the [Esprima Syntax Validator tool](http://esprima.org/demo/validate.html) to validate my JavaScript syntax. My JavaScript is just few lines cpied from Matiarize.
 
 * I used the [Pep8 Online tool](http://pep8online.com/) to validate my Python syntax.
+
+### Mobile Friendly Test
+
+A mobile friendly test of this website was done using [search.google.com](https://search.google.com/test/mobile-friendly). The responsiveness was also done using websites such as [Am I Responsive](http://ami.responsivedesign.is/) and [Responsinator](http://www.responsinator.com/).
+
+### Errors
+
+### Resolved Errors
+
+* A user could access the Edit post page and could actually delete a post without signing-in. All the user needed to do was to click on a post to view it. Then on the Url, replace the word "view_post" with "edit_post" or "delete_post". To solve this problem I wrote a login required decorator and passed it to some @app.routes. Now if a user who is not signed-in tries to carry out any action which requires a user to sign-in, A flash message will apppear on screen saying `You need to sign in first`
+
+* A user in session could edit and delete post created by others eventhough I added the login_required decorator. To solve this problem I used and "if else" statement to check if the creator of the post is the currently signed-in user. If the result is true the user will be able to edit or delete a post. And if the result is false then the user won't be able to edit or delete the post.
+
+* A user who is not signed-in could also access the Create post page but with the implementaion of the login_required decorator this is no longer possible.
+
+
+
+### Unresolved Errors
+
+* There is no default picture for post image. If the post image url is not correct the image will appear broken and the post card will look messy. I acknowlegde that this can lead to poor user experience. I would like to work on this to render a default or plan b image if a user's post image link appears to be broken.
+
+* I tried to implement pagination and it resulted to many errors which I did  not manage to fix on time before submitting this project. I decided to remove the pagination code completely from the app. I acknowlegde that a blogging app like WEBZONE without pagination can result to poor user experience because users have to scroll down to view all post. I am currently learning about pagination and will implement it on all my upcoming projects.
+
+* All post image does not appear to have the same width. It would be good for the user interface if all posts' image on the home page have the same width. I was not able to resolve this error on time.
 
 ## Deployment
 
