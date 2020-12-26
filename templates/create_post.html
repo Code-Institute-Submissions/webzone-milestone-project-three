@@ -1,59 +1,61 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-	<h3 class="page_title center-align">Create Post</h3>
 
-	<!-- Create post form -->
-	<div class="row">
-		<form class="col s12" method="POST" action="{{  url_for('create_post') }}">
-			<!-- Post title -->
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="post_title" name="post_title" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
-					<label for="post_title">Post Title</label>
-				</div>
-			</div>
-			<!-- Post image -->
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="post_image" name="post_image"
-                        type="text" class="validate" required>
-					<label for="post_image">Post Image URL</label>
-				</div>
-			</div>
-			<!-- Post image description or credit -->
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="image_description" name="image_description" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
-					<label for="image_description">Image Description</label>
-				</div>
-			</div>
-			<!-- Post content -->
-			<div class="row">
-				<div class="input-field col s12">
-					<textarea id="post_content" name="post_content" class="materialize-textarea validate" required></textarea>
-					<label for="post_content">Post Content</label>
-				</div>
-			</div>
-			<!-- Read time  -->
-			<div class="row">
-				<div class="input-field col s12">
+<div class="container">
+    <h3 class="page_title center-align">Create Post</h3>
+
+    <!-- Create post form -->
+    <div class="row">
+        <form class="col s12" method="POST" action="{{  url_for('create_post') }}">
+            <!-- Post title -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="post_title" name="post_title" minlength="5" maxlength="50" type="text" class="validate"
+                        required>
+                    <label for="post_title">Post Title</label>
+                </div>
+            </div>
+            <!-- Post image -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="post_image" name="post_image" type="text" class="validate" required>
+                    <label for="post_image">Post Image URL</label>
+                </div>
+            </div>
+            <!-- Post image description or credit -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="image_description" name="image_description" minlength="5" maxlength="50" type="text"
+                        class="validate" required>
+                    <label for="image_description">Image Description</label>
+                </div>
+            </div>
+            <!-- Post content -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="post_content" name="post_content" class="materialize-textarea validate"
+                        required></textarea>
+                    <label for="post_content">Post Content</label>
+                </div>
+            </div>
+            <!-- Read time  -->
+            <div class="row">
+                <div class="input-field col s12">
                     <input type="number" id="read_time" name="read_time" min="1" max="30" class="validate" required>
                     <!-- <label for="read_time">Read Time</label> -->
-					<label for="read_time">Read time in minutes (between 1 and 30):</label>
-				</div>
-			</div>
-			<!-- Create post button -->
-			<div class="row">
-				<div class="col s12 center-align">
-					<button type="submit" class="button light-blue">
+                    <label for="read_time">Read time in minutes (between 1 and 30):</label>
+                </div>
+            </div>
+            <!-- Create post button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="button light-blue">
                         <i class="fas fa-plus-square"></i>Create Post
                     </button>
-				</div>
-			</div>
-		</form>
-	</div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
+
 {% endblock %}

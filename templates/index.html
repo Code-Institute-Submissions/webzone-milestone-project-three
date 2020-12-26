@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <!-- Search bar -->
 <div class="row card-panel grey lighten-5">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
@@ -62,7 +63,6 @@
 {% endfor %}
 {% else %}
 <h3 class="red-text center-align">No Result Found</h3>
-
 
 {% endif %}
 

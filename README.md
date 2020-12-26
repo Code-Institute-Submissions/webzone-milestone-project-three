@@ -38,6 +38,8 @@ WEBZONE is a blogging application for web development. It is a place where user
 
 I created this application to serve the purpose of my Data-Centric Development Milestone Project at Code Institute. The project scope was to create a web app using Python and a no-SQL database (MongoDB), which uses CRUD operations to allow users to easily create, read, update, and delete blog posts.The front-end display and functionality uses HTML, CSS, and JavaScript. The back-end functionality uses Python, Flask, and MongoDB.
 
+![WEBZONE - multi-screen preview](static/images/webzone_multi_sreenpreview.png)
+
 ## UX
 
 ### User Stories
@@ -68,7 +70,7 @@ I wanted to keep it simple while practicing responsive design.
 
 The wireframes used in this project were built using Balsamiq Wireframes. These were the first versions but in the development process, there were many changes. This was due to visual preferences and feedback received from my mentor, and also other users who tested my website.
 
- Some changes can be seen in the fact that my  wireframes have pagination but however, I was not able to implemt it on time. I also removed the "view" button and made the post image and contents clickable. And upon clicking, it redirects a user to the view post page where a user can read the post contant. In addition, I added the word "Post" to all post call to action buttons such as "DELETE POST". Futhermore, the search bar on my wireframe does not have any button but on my website I decided to add a "RESET" and a "SEARCH" button.
+ Some changes can be seen in the fact that my  wireframes have pagination but however, I was not able to implement it on time. I also removed the "view" button and made the post image and contents clickable. And upon clicking, it redirects a user to the view post page where a user can read the post's content. In addition, I added the word "Post" to all post call to action buttons such as "DELETE POST". Futhermore, the search bar on my wireframe does not have any button but on my website I decided to add a "RESET" and a "SEARCH" button.
 
 [Home - signed-in user preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/home_user_in_session.pdf)
 
@@ -93,10 +95,6 @@ The wireframes used in this project were built using Balsamiq Wireframes. These 
 [View post - no signed-in user preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/view_post_no_user.pdf)
 
 [View post - signed-in user preview](https://github.com/Takaforyannick30/webzone-milestone-project-three/blob/master/static/wireframes/view_post_user.pdf)
-
-
-
-
 
 ## Features
 
@@ -172,11 +170,23 @@ Javascript, which is mostly been referred to as JS was used in this project mai
 
 Python is an interpreted, high-level and general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.
 
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+
+Jinja is a modern and designer-friendly templating language for Python. I used Jinja to simplify my HTML code, avoid repetition, and allow simpler linking of the back-end to the front-end.
+
 ### Libraries And Frameworks
 
 * [jQuery](https://jquery.com/)
 
 jQuery is a fast, small, and feature-rich JavaScript library. It was used in this project to simplify the DOM.
+
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+
+Flask is a micro web framework written in Python. This project was built using Flask.
+
+* [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+
+PyMongo was used as the Python API for MongoDB. This API enables linking the data from the back-end database to the front-end app.
 
 * [Google Fonts](https://fonts.google.com/)
 
@@ -207,6 +217,13 @@ Chrome DevTools is a set of web developer tools built directly into the Google C
 * [Balsamiq](https://balsamiq.com/)
 
 Balsamiq Wireframes is a rapid low-fidelity UI wireframing tool that reproduces the experience of sketching on a notepad or whiteboard, but using a computer. Balsamiq wireframes was used in producing the wireframes for this project.
+
+### Database
+
+* [MongoDB](https://www.mongodb.com/) 
+
+MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. MongoDB was used to store the database. The informatio displayed in the front-end app is pulled from the database store.
+
 
 ## Testing
 
@@ -282,7 +299,16 @@ The Webzone application was tested across multiple browsers such as Google Chrom
 
 ### Manual Test
 
+### HTML, CSS, JavaScript and Python Code Validation
 
+* I used the [W3C HTML Validator tool](https://validator.w3.org/#validate_by_input) to validate my HTML code.
+    - The W3C Validator tool doesn't recognise the Jinja templating, which has resulted in it showing a lot of errors in relation to the Jinja code. However, all other code is validating fine.
+
+* I used the [W3C CSS Validator tool](https://jigsaw.w3.org/css-validator/#validate_by_input) to validate my CSS code.
+
+* I used the [Esprima Syntax Validator tool](http://esprima.org/demo/validate.html) to validate my JavaScript syntax. My JavaScript is just few lines cpied from Matiarize.
+
+* I used the [Pep8 Online tool](http://pep8online.com/) to validate my Python syntax.
 
 ## Deployment
 
@@ -352,3 +378,33 @@ To run my code locally, users can download a local copy of my code to their desk
 10. In the terminal, run the `pip3 install -r requirements.txt` command to install the requirements.txt file.
 11. You should now be able to run the app locally using the `python3 run.py` command.
 
+## Credits
+
+### contents
+
+* Most of this project's user authentication functionality was taken from [Code Institute's](https://codeinstitute.net/) task manager mini project. I had to customize it for my app.
+
+* The Modal Structure HTML and JavaScript code was taken from [Materialize Modals](https://materializecss.com/modals.html).
+
+* The Forms Structure was taken from [Materialize Forms](https://materializecss.com/text-inputs.html).
+
+* NavBar HTML and JavaScript code was taken from [Materialize NavBar](https://materializecss.com/navbar.html).
+
+* I read this [Error Handlers Article](https://flask.palletsprojects.com/en/1.0.x/errorhandling/) to learn how to implement error handlers in my Python code.
+
+### Media
+
+* I Created the Logo Icon on my website using [Free logo design](https://www.freelogodesign.org/)
+
+* The favicon on my website was created using [favicon.cc](https://www.favicon.cc/)
+
+## Acknowledgements
+
+* A special thanks to my mentor, Sandeep Aggarwal, for his feedback on my project's scope, design and functionality.
+
+## Disclaimer
+
+This project is for educational purposes only.
+
+
+[Back to top ↑](#Table-Of-Content)

@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_posts")
+@app.route("/index")
 def index():
     posts = list(mongo.db.posts.find())
     return render_template("index.html", posts=posts)
@@ -62,7 +62,7 @@ def sign_up():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("index"))
-    return render_template("sign_up.html")
+    return render_template("sign_up.html", title="Sign Up")
 
 
 @app.route("/sign_in", methods=["GET", "POST"])
@@ -89,7 +89,7 @@ def sign_in():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("sign_in"))
 
-    return render_template("sign_in.html")
+    return render_template("sign_in.html", title="Sign In")
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -140,7 +140,7 @@ def create_post():
         mongo.db.posts.insert_one(post)
         flash("Post Successfully Created")
         return redirect(url_for("index"))
-    return render_template("create_post.html")
+    return render_template("create_post.html", title="Create Post")
 
 
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
@@ -165,7 +165,7 @@ def edit_post(post_id):
                 return redirect(url_for("index"))
 
             post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-            return render_template("edit_post.html", post=post)
+            return render_template("edit_post.html",  post=post)
         # if the signed-in user is not the creator of the post
         else:
             flash("A post can only be edited by its creator")

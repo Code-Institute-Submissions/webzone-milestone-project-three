@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="row">
     <div class="col l8 offset-l2">
         <div class="post_image view_page_post_image"> <img class="responsive-img" src="{{post.post_image}}"> </div>
@@ -11,7 +12,8 @@
         <!-- Delete and Edit post buttons only viewable to logged-in users -->
         {% if session.user|lower == post.created_by|lower %}
         <div class="post_btn view_page_cta_buttons">
-            <button data-target="modal1" class="button red modal-trigger"><i class="fas fa-trash-alt"></i>Delete Post</button>
+            <button data-target="modal1" class="button red modal-trigger"><i class="fas fa-trash-alt"></i>Delete
+                Post</button>
             <a href="{{ url_for('edit_post', post_id=post._id) }}" class="button light-blue lighten-1"><i
                     class="fas fa-edit"></i>Edit Post</a>
         </div>
@@ -27,8 +29,8 @@
     </div>
     <div class="modal-footer">
         <button class="button cancel_button modal-close"><i class="fas fa-window-close"></i>Cancel</button>
-        <a href="{{ url_for('delete_post', post_id=post._id) }}"
-            class="button red modal-close"><i class="fas fa-trash-alt"></i>Delete Post</a>
+        <a href="{{ url_for('delete_post', post_id=post._id) }}" class="button red modal-close"><i
+                class="fas fa-trash-alt"></i>Delete Post</a>
     </div>
 </div>
 

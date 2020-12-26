@@ -1,47 +1,45 @@
- <nav>
-            <div class="nav-wrapper">
-                <!-- Webzone logo and text to be displayed on all screen sizes -->
-                <a href="{{ url_for('index') }}" class="brand-logo">
-                    <img class="webzone_logo" src="{{ url_for('static', filename='img/webzone_logo_icon.png') }}"
-                        alt="Webzone Logo">
-                    <span class="webzone_logo_text">WEBZONE</span>
-                </a>
-                <!-- Harmbuger Icon menu to be displayed on mobile -->
-                <a href="#" data-activates="mobile-demo" class="button-collapse sidenav-trigger right"><i
-                        class="fas fa-bars"></i></a>
-                <!-- Main nav -->
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
-                    <!-- Additional section only viewable to logged-in users -->
-                    {% if session.user %}
-                    <li><a href="{{ url_for('create_post') }}"><i class="fas fa-plus-square"></i>Create Post</a></li>
-                    <li><a href="{{ url_for('profile', username=session['user']) }}"><i
-                                class="fas fa-user"></i>Profile</a>
-                    </li>
-                    <li><a href="{{ url_for('sign_out') }}"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
-                    <!-- If there is no user in session -->
-                    {% else %}
-                    <li><a href="{{ url_for('sign_up') }}"><i class="fas fa-user-plus"></i>Sign Up</a></li>
-                    <li><a href="{{ url_for('sign_in') }}"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
-                    {% endif %}
-                </ul>
-                <!-- End main nav -->
-                <!-- Mobile side nav -->
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
-                    <!-- Additional section only viewable to logged-in users -->
-                    {% if session.user %}
-                    <li><a href="{{ url_for('create_post') }}"><i class="fas fa-plus-square"></i>Create Post</a></li>
-                    <li><a href="{{ url_for('profile', username=session['user']) }}"><i
-                                class="fas fa-user"></i>Profile</a>
-                    </li>
-                    <li><a href="{{ url_for('sign_out') }}"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
-                    <!-- If there is no user in session -->
-                    {% else %}
-                    <li><a href="{{ url_for('sign_up') }}"><i class="fas fa-user-plus"></i>Sign Up</a></li>
-                    <li><a href="{{ url_for('sign_in') }}"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
-                    {% endif %}
-                </ul>
-                <!-- End mobile side nav -->
-            </div>
-        </nav>
+<nav>
+    <div class="nav-wrapper">
+        <!-- Webzone logo and text to be displayed on all screen sizes -->
+        <a href="{{ url_for('index') }}" class="brand-logo">
+            <img class="webzone_logo" src="{{ url_for('static', filename='img/webzone_logo_icon.png') }}"
+                alt="Webzone Logo">
+            <span class="webzone_logo_text">WEBZONE</span>
+        </a>
+        <!-- Harmbuger Icon menu to be displayed on mobile -->
+        <a href="#" data-activates="mobile-demo" class="button-collapse sidenav-trigger right"><i
+                class="fas fa-bars"></i></a>
+        <!-- Main nav -->
+        <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
+            <!-- Additional section only viewable to logged-in users -->
+            {% if session.user %}
+            <li><a href="{{ url_for('create_post') }}"><i class="fas fa-plus-square"></i>Create Post</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>Profile</a>
+            </li>
+            <li><a href="{{ url_for('sign_out') }}"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
+            <!-- If there is no user in session -->
+            {% else %}
+            <li><a href="{{ url_for('sign_up') }}"><i class="fas fa-user-plus"></i>Sign Up</a></li>
+            <li><a href="{{ url_for('sign_in') }}"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
+            {% endif %}
+        </ul>
+        <!-- End main nav -->
+        <!-- Mobile side nav -->
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
+            <!-- Additional section only viewable to logged-in users -->
+            {% if session.user %}
+            <li><a href="{{ url_for('create_post') }}"><i class="fas fa-plus-square"></i>Create Post</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>Profile</a>
+            </li>
+            <li><a href="{{ url_for('sign_out') }}"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
+            <!-- If there is no user in session -->
+            {% else %}
+            <li><a href="{{ url_for('sign_up') }}"><i class="fas fa-user-plus"></i>Sign Up</a></li>
+            <li><a href="{{ url_for('sign_in') }}"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
+            {% endif %}
+        </ul>
+        <!-- End mobile side nav -->
+    </div>
+</nav>
