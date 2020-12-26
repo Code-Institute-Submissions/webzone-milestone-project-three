@@ -49,7 +49,7 @@ def sign_up():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Username already exists")
+            flash("Username already exists!")
             return redirect(url_for("sign_up"))
 
         register = {
@@ -77,16 +77,16 @@ def sign_in():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                flash("Welcome, {}!".format(request.form.get("username")))
                 return redirect(url_for("index"))
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password!")
                 return redirect(url_for("sign_in"))
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password!")
             return redirect(url_for("sign_in"))
 
     return render_template("sign_in.html", title="Sign In")
@@ -110,7 +110,7 @@ def login_required(f):
     def wrap(*args, **kwargs):
         if "user" in session and session["user"]:
             return f(*args, **kwargs)
-        flash("You need to sign in first")
+        flash("You need to sign in first!")
         return redirect(url_for("sign_in"))
     return wrap
 
@@ -119,7 +119,7 @@ def login_required(f):
 @login_required  # Allow only signed-in users to sign out
 def sign_out():
     # remove user from session cookie
-    flash("You have been logged out")
+    flash("You have been logged out!")
     session.pop("user")
     return redirect(url_for("sign_in"))
 
@@ -138,7 +138,7 @@ def create_post():
             "created_at": datetime.now().strftime('%B %d %Y')
         }
         mongo.db.posts.insert_one(post)
-        flash("Post Successfully Created")
+        flash("Post Successfully Created!")
         return redirect(url_for("index"))
     return render_template("create_post.html", title="Create Post")
 
@@ -161,17 +161,17 @@ def edit_post(post_id):
                   "created_at": datetime.utcnow().strftime('%B %d %Y')
                 }
                 mongo.db.posts.update({"_id": ObjectId(post_id)}, post)
-                flash("Post Successfully Updated")
+                flash("Post Successfully Updated!")
                 return redirect(url_for("index"))
 
             post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
             return render_template("edit_post.html",  post=post)
         # if the signed-in user is not the creator of the post
         else:
-            flash("A post can only be edited by its creator")
+            flash("A post can only be edited by its creator!")
     # If the post doesn't exist
     else:
-        flash("Not found")
+        flash("Not found!")
     return redirect(url_for("index"))
 
 
@@ -185,9 +185,9 @@ def delete_post(post_id):
             mongo.db.posts.remove({"_id": ObjectId(post_id)})
             flash("Post Deleted!")
         else:
-            flash("A post can only be deleted by its creator")
+            flash("A post can only be deleted by its creator!")
     else:
-        flash("Not found")
+        flash("Not found!")
     return redirect(url_for("index"))
 
 
