@@ -42,6 +42,9 @@ I created this application to serve the purpose of my Data-Centric Development M
 
 ![WEBZONE - multi-screen preview](static/img/webzone_multi_screen_preview.png)
 
+<p align=center>
+<a href="http://webzone-milestone-project-3.herokuapp.com/index">Open App</a></p>
+
 ## UX
 
 ### User Stories
@@ -108,13 +111,13 @@ The app uses Python logic to allow users to sign-in, or sign-up for a free accou
 
 - **Navbar/Sidenav Links** - The navbar and sidenav links vary depending on whether the user is logged in or not. If the user isn't logged in, the Home, Sign Up and Sign In links are shown on the navigation bar. When the user is logged in, the Home, Create Post, Profile, and Sign Out links are shown.
 
-- **Sign Up** - Allows new users to sign-up for a free account. The form's username field and password field only accept letters and or numbers. I've included checks to ensure that the username doesn't already exist in the database before users are successfully registered. The password is been harshed before stored in the database for security purposes.  
+- **Sign Up** - Allows new users to sign-up for a free account. The form's username field and password field only accept letters and or numbers. I've included checks to ensure that the username doesn't already exist in the database before users are successfully registered. The password is been hashed before stored in the database for security purposes.  
 
-- **Sign In** - Allows existing users to sign-in into their account. I've included authorization checks to verify the username and password (hashed password) against the details stored in the database before users can be logged in. If the username and passowrd matches, the user will successfully sign-in.
+- **Sign In** - Allows existing users to sign-in into their account. I've included authorization checks to verify the username and password (hashed password) against the details stored in the database before users can be logged in. If the username and passoword matches, the user will successfully sign-in.
 
 - **Flash Messages** - The flash messages are been displayed at the top of the page below the navigation bar when the user performs certain actions. These messages differ based on user interaction and provides helper messages for users.
 
-- **Search** - A user can search for a particular post by typing a keyword into the search bar , and the results are subsequently displayed when the user clicks the Search button. For example, if the user searches for 'Python', the results will show all Post with the keyword 'Python' in theit titles. The form field is required, and the user can't submit the form without entering a keyword of minimum 3 characters e.g 'git'. If there is no post in the databse with any keyword provided by the user, upon clicking the search button 'No Result Found' will be displayed on the screen of the user's device.
+- **Search** - A user can search for a particular post by typing a keyword into the search bar , and the results are subsequently displayed when the user clicks the Search button. For example, if the user searches for 'Python', the results will show all Post with the keyword 'Python' in their titles. The form field is required, and the user can't submit the form without entering a keyword of minimum 3 characters e.g 'git'. If there is no post in the databse with any keyword provided by the user, upon clicking the search button 'No Result Found' will be displayed on the screen of the user's device.
 
 - **Reset Button** - The reset button is available in the Search bar. Clicking the Reset button refreshes the 'home' page and restores its default values.
 
@@ -126,11 +129,11 @@ The app uses Python logic to allow users to sign-in, or sign-up for a free accou
 
 - **Cancel Button (Edit Post Page and Delete Popup Modal)** - There is a 'Cancel' button on the Edit post page and on the Delete Popup Modal. The 'Cancel' button on the edit page redirect the user back to the Home page. And the 'Cancel' button on the Delete modal popup is meant to close the popup.
 
-- **Footer** - My website has a footer section with three subsection and a copyright info. The subsections includes; About Us, Contact Us and Connect With Us. The "Connect With Us" section contains Icons of social platforms such as GitHub, Facebook, Instagram and LinkeLinkedIn. When a user clicks on any of these icons they will be redirected to the website of the social platform.
+- **Footer** - My website has a footer section with three subsection and a copyright info. The subsections includes; About Us, Contact Us and Connect With Us. The "Connect With Us" section contains Icons of social platforms such as GitHub, Facebook, Instagram and LinkedIn. When a user clicks on any of these icons they will be redirected to the website of the social platform.
 
 - **Profile Page** - The profile page displays the owner of the profile.
 
-- **Custom Error Pages** - I've included two custom error pages namely error_404.html - for 'page not found' errors and error_500.html - for 'Internal server errors. 
+- **Custom Error Pages** - I've included two custom error pages namely error_404.html - for 'page not found' errors and error_500.html - for 'Internal server errors'. 
 
 ### Features Left To Implement
 
@@ -303,7 +306,7 @@ The Webzone application was tested across multiple browsers such as Google Chrom
 
 ### Manual Test
 
-In addition to testing the user stories, I did some additional manual test such as testing that the error handler works as expected. I was able to test the 404 error handler by editing the url of a particular page on my website such as replacing the word "view_post" on the url with "contact". Upon doing this the error_404.html template was been rendered to the browser. I was not able to test the error-500 handler for internal server error because I had no idea how to manually make my website develope an internal server error. But I do believe the error_500.html template will be rendered in such an event.
+In addition to testing the user stories, I did some additional manual test such as testing that the error handler works as expected. I was able to test the 404 error handler by editing the url of a particular page on my website such as replacing the word "view_post" on the url with "contact". Upon doing this the error_404.html template was been rendered to the browser. I was not able to test the error-500 handler for internal server error because I had no idea how to manually make my website develop an internal server error. But I do believe the error_500.html template will be rendered in such an event.
 
 ### HTML, CSS, JavaScript and Python Code Validation
 
@@ -312,7 +315,7 @@ In addition to testing the user stories, I did some additional manual test such 
 
 * I used the [W3C CSS Validator tool](https://jigsaw.w3.org/css-validator/#validate_by_input) to validate my CSS code.
 
-* I used the [Esprima Syntax Validator tool](http://esprima.org/demo/validate.html) to validate my JavaScript syntax. My JavaScript is just few lines cpied from Matiarize.
+* I used the [Esprima Syntax Validator tool](http://esprima.org/demo/validate.html) to validate my JavaScript syntax. My JavaScript is just few lines copied from Materialize.
 
 * I used the [Pep8 Online tool](http://pep8online.com/) to validate my Python syntax.
 
@@ -330,7 +333,7 @@ A mobile friendly test of this website was done using [search.google.com](https:
 
 * A user who is not signed-in could also access the Create post page but with the implementation of the login_required decorator this is no longer possible.
 
-* I had a problem with my post images having the same with on the home page but the problem was simply as a result of the fact that I was mixed up with my css. I have rectified the mistake and now all pictures have the same with as expected on the home page.
+* I had a problem with my post images having the same width on the home page but the problem was simply as a result of the fact that I was mixed up with my css. I have rectified the mistake and now all pictures have the same width as expected on the home page.
 
 * A major problem I faced was displaying the post content on the view post page as multiple paragraphs. In the create post form I used ´<text-area></text-area>´ to request for the post content from a user but in the view post form I used a ´<p></p>´ tag to render the post content. I realised that eventhough I typed in the post content as multiple paragraphs with a lot of line breaks, the post content was been displayed as one big block of text and it was quite difficult to read. To solve this problem, I  decided to use ´<pre></pre>´ tag to render the post content on the view post page. I will learn about better ways to solve this problem in the future.
 

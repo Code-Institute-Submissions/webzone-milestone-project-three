@@ -250,6 +250,7 @@ nav .nav-wrapper ul li a {
 footer {
     background-color: #163172;
     color: #ffffff;
+    font-size: 1.4rem;
     font-weight: lighter;
     margin-top: 2rem;
     border-top: 2px solid #1e56a0;
@@ -260,9 +261,9 @@ footer {
 
 footer a {
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 1.9rem;
   border: 1px solid #ffffff;
-  padding: .5rem;
+  padding: .8rem;
   border-radius: .4rem;
   margin: .4rem .8rem;
 }
@@ -283,6 +284,12 @@ footer ul li{
  footer a:hover {
   color: #ffffff;
   background-color: #005792;
+  transition-duration: 1s;
+}
+
+ footer a:focus {
+  color: #ffffff;
+  background-color: #00589273;
   transition-duration: 1s;
 }
 
@@ -309,7 +316,7 @@ footer ul li{
         display: flex;
         flex-direction: column;
         justify-content: center;
-    } *
+    } 
 }
 
 @media only screen and (max-width: 767px) {
