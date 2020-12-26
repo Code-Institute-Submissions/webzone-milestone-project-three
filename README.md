@@ -38,7 +38,7 @@ WEBZONE is a blogging application for web development. It is a place where user
 
 I created this application to serve the purpose of my Data-Centric Development Milestone Project at Code Institute. The project scope was to create a web app using Python and a no-SQL database (MongoDB), which uses CRUD operations to allow users to easily create, read, update, and delete blog posts.The front-end display and functionality uses HTML, CSS, and JavaScript. The back-end functionality uses Python, Flask, and MongoDB.
 
-![WEBZONE - multi-screen preview](static/images/webzone_multi_sreenpreview.png)
+![WEBZONE - multi-screen preview](static/images/webzone_multi_sreen_preview.png)
 
 ## UX
 
