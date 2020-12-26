@@ -430,7 +430,7 @@ To run my code locally, users can download a local copy of my code to their desk
 
 * The favicon on my website was created using [favicon.cc](https://www.favicon.cc/)
 
-* The content I used for blog post on my website was copied from [Medium](https://medium.com/).
+* The content and images I used for creating blog post on my website was copied from [Medium](https://medium.com/). This will be use only for educational purposes to demonstrate my skill as a web developer. I gave credits to the creator of the post on either the post title, image description or bellow the post content.
 
 ## Acknowledgements
 
