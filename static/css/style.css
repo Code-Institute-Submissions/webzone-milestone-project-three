@@ -33,6 +33,16 @@ main {
     font-size: 1.5rem;
 }
 
+/* Display post content showing paragraphs and all line breaks */
+pre {
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
 /* --------------------------------------------------------Header/Navigation section */
 
 nav {
@@ -157,6 +167,7 @@ nav .nav-wrapper ul li a {
 .post_image {
     height: 15.5rem;
     overflow: hidden;
+    background-color: #808080;
 }
 
 .post_image a img {
@@ -283,22 +294,22 @@ footer ul li{
 @media screen and (min-width: 900px) {
 
     .post {
-        display: flex;;
+        display: flex;
         height: 15.5rem;
         overflow: hidden;
     }
 
-    .post-image {        
+    .post_image {        
         height: auto;
         flex: 1;
     }
 
-    .post-content {
+    .post_content {
         flex: 2;
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
+    } *
 }
 
 @media only screen and (max-width: 767px) {

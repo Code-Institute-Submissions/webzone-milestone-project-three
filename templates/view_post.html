@@ -3,12 +3,13 @@
 
 <div class="row">
     <div class="col l8 offset-l2">
-        <div class="post_image view_page_post_image"> <img class="responsive-img" src="{{post.post_image}}" alt="Post image"> </div>
-        <p class="small_text gray">{{post.image_description}}</p>
+        <div class="post_image view_page_post_image"> <img class="responsive-img" src="{{post.post_image}}"
+                alt="Post image"> </div>
+        <p class="small_text gray center-align">{{post.image_description}}</p>
         <h2 class="post_title"> {{post.post_title}}</h2>
         <p class="small_text gray">By {{post.created_by}} - {{post.created_at}} </p>
         <p class="small_text gray"> {{post.read_time}} min read</p>
-        <p class="gray">{{post.post_content}}</p>
+        <pre class="gray">{{post.post_content}}</pre>
         <!-- Delete and Edit post buttons only viewable to logged-in users -->
         {% if session.user|lower == post.created_by|lower %}
         <div class="post_btn view_page_cta_buttons">

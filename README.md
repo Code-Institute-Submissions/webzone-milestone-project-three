@@ -326,19 +326,21 @@ A mobile friendly test of this website was done using [search.google.com](https:
 
 * A user could access the Edit post page and could actually delete a post without signing-in. All the user needed to do was to click on a post to view it. Then on the Url, replace the word "view_post" with "edit_post" or "delete_post". To solve this problem I wrote a login required decorator and passed it to some @app.routes. Now if a user who is not signed-in tries to carry out any action which requires a user to sign-in, A flash message will apppear on screen saying `You need to sign in first`
 
-* A user in session could edit and delete post created by others eventhough I added the login_required decorator. To solve this problem I used and "if else" statement to check if the creator of the post is the currently signed-in user. If the result is true the user will be able to edit or delete a post. And if the result is false then the user won't be able to edit or delete the post.
+* A user in session could edit and delete post created by others eventhough I added the login_required decorator. To solve this problem I used an "if else" statement to check if the creator of the post is the currently signed-in user. If the result is true the user will be able to edit or delete a post. And if the result is false then the user won't be able to edit or delete the post.
 
-* A user who is not signed-in could also access the Create post page but with the implementaion of the login_required decorator this is no longer possible.
+* A user who is not signed-in could also access the Create post page but with the implementation of the login_required decorator this is no longer possible.
 
+* I had a problem with my post images having the same with on the home page but the problem was simply as a result of the fact that I was mixed up with my css. I have rectified the mistake and now all pictures have the same with as expected on the home page.
+
+* A major problem I faced was displaying the post content on the view post page as multiple paragraphs. In the create post form I used ´<text-area></text-area>´ to request for the post content from a user but in the view post form I used a ´<p></p>´ tag to render the post content. I realised that eventhough I typed in the post content as multiple paragraphs with a lot of line breaks, the post content was been displayed as one big block of text and it was quite difficult to read. To solve this problem, I  decided to use ´<pre></pre>´ tag to render the post content on the view post page. I will learn about better ways to solve this problem in the future.
 
 
 ### Unresolved Errors
 
-* There is no default picture for post image. If the post image url is not correct the image will appear broken and the post card will look messy. I acknowlegde that this can lead to poor user experience. I would like to work on this to render a default or plan b image if a user's post image link appears to be broken.
+* There is no default picture for post image. If the post image url is not correct the image will appear broken and the post card will look messy. I acknowlegde that this can lead to poor user experience. I would like to work on this to render a default or plan b image if a user's post image link appears to be broken. For the main time I have added ´background-color: #808080´ which will be visible only if the image is broken.
 
-* I tried to implement pagination and it resulted to many errors which I did  not manage to fix on time before submitting this project. I decided to remove the pagination code completely from the app. I acknowlegde that a blogging app like WEBZONE without pagination can result to poor user experience because users have to scroll down to view all post. I am currently learning about pagination and will implement it on all my upcoming projects.
+* I tried to implement pagination and it resulted to many errors which I did  not manage to fix on time before submitting this project.  I decided to remove the pagination code completely from the source code. I acknowlegde that a blogging app like WEBZONE without pagination can result to poor user experience because users have to scroll down to view all post. I am currently learning about pagination and will implement it on all my upcoming projects. I copied all my post contents and images from [Medium](https://medium.com/) and I realised that they did not implement pagination. But I think my app might be more user-friendly with pagination.
 
-* All post image does not appear to have the same width. It would be good for the user interface if all posts' image on the home page have the same width. I was not able to resolve this error on time.
 
 ## Deployment
 
@@ -427,6 +429,8 @@ To run my code locally, users can download a local copy of my code to their desk
 * I Created the Logo Icon on my website using [Free logo design](https://www.freelogodesign.org/)
 
 * The favicon on my website was created using [favicon.cc](https://www.favicon.cc/)
+
+* The content I used for blog post on my website was copied from [Medium](https://medium.com/).
 
 ## Acknowledgements
 
